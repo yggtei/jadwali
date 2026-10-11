@@ -1,0 +1,21 @@
+name = "jadwali"
+main = "src/index.mjs"
+compatibility_date = "2025-09-01"
+
+# ملفات الموقع. الخادم يشتغل أولاً فقط على هذه المسارات، والباقي يُخدم مباشرة.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*", "/proxy", "/proxy/*"]
+
+[[durable_objects.bindings]]
+name = "SUB"
+class_name = "Subscriber"
+
+[[durable_objects.bindings]]
+name = "KEYS"
+class_name = "KeyStore"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Subscriber", "KeyStore"]

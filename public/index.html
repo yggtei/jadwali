@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>جدولي | جدول الجامعة من Outlook مع تنبيهات وحاسبة المعدل · My Schedule</title>
+<meta name="description" content="جدولي: موقع مجاني يحوّل جدول Outlook الجامعي إلى جدول مرتب وسهل، مع تنبيهات قبل المحاضرة، تتبع الدرجات، حاسبة المعدل التراكمي (GPA)، وقائمة مهام. يعمل على الجوال والكمبيوتر. | Free university timetable app: turn your Outlook calendar into a clean schedule with lecture reminders, grade tracking, a GPA calculator and tasks. Works on phone and desktop.">
+<meta name="keywords" content="جدول جامعي, جدول المحاضرات, جدول Outlook, ICS, حاسبة المعدل, حساب GPA, تنبيهات المحاضرات, تطبيق جدول دراسي, university timetable, class schedule, Outlook calendar, GPA calculator">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="application-name" content="جدولي">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="جدولي · My Schedule">
+<meta property="og:title" content="جدولي | جدول الجامعة من Outlook مع تنبيهات وحاسبة المعدل · My Schedule">
+<meta property="og:description" content="جدولي: موقع مجاني يحوّل جدول Outlook الجامعي إلى جدول مرتب وسهل، مع تنبيهات قبل المحاضرة، تتبع الدرجات، حاسبة المعدل التراكمي (GPA)، وقائمة مهام. يعمل على الجوال والكمبيوتر.">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="جدولي | جدول الجامعة من Outlook مع تنبيهات وحاسبة المعدل · My Schedule">
+<meta name="twitter:description" content="جدولي: موقع مجاني يحوّل جدول Outlook الجامعي إلى جدول مرتب وسهل، مع تنبيهات قبل المحاضرة، تتبع الدرجات، حاسبة المعدل التراكمي (GPA)، وقائمة مهام. يعمل على الجوال والكمبيوتر.">
+<!-- بعد تسجيل الموقع في Google Search Console انسخ كود التحقق هنا وأزل علامات التعليق:
+<meta name="google-site-verification" content="PASTE_CODE_HERE">
+-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"جدولي","alternateName":["My Schedule","Jadwali"],"applicationCategory":"EducationalApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","inLanguage":["ar","en"],"description":"Free university timetable app: turn your Outlook calendar into a clean schedule with lecture reminders, grade tracking, a GPA calculator and tasks. Works on phone and desktop.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="جدولي">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#ffffff;--card:#ffffff;--text:#0a0a0a;--muted:#5c5c5c;--line:#d2d2d2;--edge:#0a0a0a;
+  --ink:#0a0a0a;--on-ink:#ffffff;--accent:#0a0a0a;--accent-soft:#f0f0f0;--danger:#0a0a0a;--ok:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.05),0 10px 22px -10px rgba(0,0,0,.30);
+  --hard:5px 5px 0 rgba(0,0,0,.20);--pat-op:.13;--r:12px;
+}
+:root[data-theme=dark]{
+  color-scheme:dark;
+  --bg:#050505;--card:#101010;--text:#f4f4f4;--muted:#a3a3a3;--line:#2e2e2e;--edge:#8f8f8f;
+  --ink:#f4f4f4;--on-ink:#050505;--accent:#f4f4f4;--accent-soft:#1c1c1c;--danger:#f4f4f4;--ok:#f4f4f4;
+  --shadow:0 1px 0 rgba(255,255,255,.04),0 12px 26px -10px rgba(0,0,0,.95);
+  --hard:5px 5px 0 rgba(255,255,255,.16);--pat-op:.15;
+}
+@media (prefers-color-scheme:dark){
+  :root[data-theme=auto]{
+    color-scheme:dark;
+    --bg:#050505;--card:#101010;--text:#f4f4f4;--muted:#a3a3a3;--line:#2e2e2e;--edge:#8f8f8f;
+    --ink:#f4f4f4;--on-ink:#050505;--accent:#f4f4f4;--accent-soft:#1c1c1c;--danger:#f4f4f4;--ok:#f4f4f4;
+    --shadow:0 1px 0 rgba(255,255,255,.04),0 12px 26px -10px rgba(0,0,0,.95);
+    --hard:5px 5px 0 rgba(255,255,255,.16);--pat-op:.15;
+  }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,"Noto Sans Arabic",Arial,sans-serif;font-size:16px;line-height:1.5;min-height:100vh;position:relative}
+
+/* ---------- خلفية: أشكال هندسية كثيرة ومتكررة (طبقتان بمقاسين مختلفين) ---------- */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:var(--ink);opacity:var(--pat-op);
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='20' cy='20' r='9'/%3E%3Cpath d='M70 10 L88 42 L52 42 Z'/%3E%3Crect x='92' y='12' width='20' height='20' transform='rotate%2845 102 22%29'/%3E%3Cpath d='M20 70 v22 M9 81 h22'/%3E%3Ccircle cx='66' cy='78' r='5' fill='black'/%3E%3Cpath d='M92 76 L102 70 L112 76 L112 88 L102 94 L92 88 Z'/%3E%3Cpath d='M6 106 q8 -12 16 0 t16 0'/%3E%3Crect x='60' y='100' width='28' height='14'/%3E%3Cpath d='M98 112 a10 10 0 0 1 20 0 Z'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190' viewBox='0 0 190 190' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='40' cy='40' r='22'/%3E%3Ccircle cx='40' cy='40' r='11'/%3E%3Cpath d='M120 20 L160 20 L140 56 Z'/%3E%3Crect x='20' y='110' width='30' height='30'/%3E%3Cpath d='M92 98 l26 26 -26 26 -26 -26 Z'/%3E%3Cpath d='M152 108 v34 M135 125 h34'/%3E%3Ccircle cx='150' cy='172' r='2.5' fill='black'/%3E%3Ccircle cx='162' cy='172' r='2.5' fill='black'/%3E%3Ccircle cx='174' cy='172' r='2.5' fill='black'/%3E%3Cpath d='M20 162 h40 M20 170 h40 M20 178 h40'/%3E%3Cpath d='M104 176 a14 14 0 0 1 28 0'/%3E%3Cpath d='M70 70 l8 8 8 -8 8 8 8 -8'/%3E%3Ccircle cx='170' cy='60' r='7' fill='black'/%3E%3C/svg%3E");
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='20' cy='20' r='9'/%3E%3Cpath d='M70 10 L88 42 L52 42 Z'/%3E%3Crect x='92' y='12' width='20' height='20' transform='rotate%2845 102 22%29'/%3E%3Cpath d='M20 70 v22 M9 81 h22'/%3E%3Ccircle cx='66' cy='78' r='5' fill='black'/%3E%3Cpath d='M92 76 L102 70 L112 76 L112 88 L102 94 L92 88 Z'/%3E%3Cpath d='M6 106 q8 -12 16 0 t16 0'/%3E%3Crect x='60' y='100' width='28' height='14'/%3E%3Cpath d='M98 112 a10 10 0 0 1 20 0 Z'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190' viewBox='0 0 190 190' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='40' cy='40' r='22'/%3E%3Ccircle cx='40' cy='40' r='11'/%3E%3Cpath d='M120 20 L160 20 L140 56 Z'/%3E%3Crect x='20' y='110' width='30' height='30'/%3E%3Cpath d='M92 98 l26 26 -26 26 -26 -26 Z'/%3E%3Cpath d='M152 108 v34 M135 125 h34'/%3E%3Ccircle cx='150' cy='172' r='2.5' fill='black'/%3E%3Ccircle cx='162' cy='172' r='2.5' fill='black'/%3E%3Ccircle cx='174' cy='172' r='2.5' fill='black'/%3E%3Cpath d='M20 162 h40 M20 170 h40 M20 178 h40'/%3E%3Cpath d='M104 176 a14 14 0 0 1 28 0'/%3E%3Cpath d='M70 70 l8 8 8 -8 8 8 8 -8'/%3E%3Ccircle cx='170' cy='60' r='7' fill='black'/%3E%3C/svg%3E");
+  -webkit-mask-size:120px 120px,190px 190px;mask-size:120px 120px,190px 190px;
+  -webkit-mask-position:0 0,47px 63px;mask-position:0 0,47px 63px;
+  -webkit-mask-repeat:repeat,repeat;mask-repeat:repeat,repeat;
+}
+
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+h1,h2,h3{margin:0}
+h2{font-size:1.2rem;margin:.4rem 0 1rem;text-align:center;letter-spacing:.2px}
+.muted{color:var(--muted)}
+.small{font-size:.85rem}
+.wrap{flex-wrap:wrap}
+.row{display:flex;align-items:center;gap:.5rem}
+.grow{flex:1;min-width:0}
+.hidden{display:none!important}
+[dir=ltr] .pv svg,[dir=rtl] .nx svg{transform:scaleX(-1)}
+svg.i{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+svg.i.s{width:16px;height:16px}
+
+/* ---------- الرأس والتنقل (موسَّط) ---------- */
+.top{position:sticky;top:0;z-index:20;padding-top:env(safe-area-inset-top);background:color-mix(in srgb,var(--bg) 94%,transparent);border-bottom:1px solid var(--edge)}
+.bar{max-width:800px;margin:0 auto;position:relative;display:flex;justify-content:center;align-items:center;padding:.65rem 3.4rem .45rem}
+.logo-wrap{text-align:center}
+.logo{font-size:1.35rem;font-weight:800;letter-spacing:.3px;display:inline-flex;align-items:center;gap:.45rem;line-height:1.2}
+.logo svg{width:34px;height:34px}
+#syncbtn{position:absolute;inset-inline-end:1rem;top:50%;transform:translateY(-50%)}
+.icon-btn{border:1px solid var(--edge);border-radius:10px;width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;background:var(--card);box-shadow:var(--shadow)}
+.icon-btn:active{transform:scale(.96)}
+#syncbtn:active{transform:translateY(-50%) scale(.96)}
+.spin svg{animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+nav{display:flex;gap:.3rem}
+nav button{background:none;border:1px solid transparent;padding:.5rem .9rem;border-radius:10px;display:flex;align-items:center;gap:.45rem;color:var(--muted);font-weight:700}
+nav button.on{background:var(--ink);color:var(--on-ink)}
+@media (max-width:799px){
+  nav{position:fixed;inset-inline:0;bottom:0;z-index:30;background:var(--card);border-top:1px solid var(--edge);padding:.35rem .5rem calc(.35rem + env(safe-area-inset-bottom));justify-content:space-around;box-shadow:0 -8px 20px -12px rgba(0,0,0,.35)}
+  nav button{flex-direction:column;gap:2px;font-size:.72rem;padding:.35rem .6rem;flex:1}
+  main{padding-bottom:96px!important}
+}
+@media (min-width:800px){
+  .top{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  nav{justify-content:center;padding:.2rem 1rem .65rem}
+}
+main{max-width:800px;margin:0 auto;padding:1.1rem 1rem}
+
+/* ---------- عناصر عامة ---------- */
+.card{background:var(--card);border:1px solid var(--edge);border-radius:var(--r);padding:1rem;box-shadow:var(--shadow);margin-bottom:1rem}
+.chip{border:1px solid var(--edge);background:var(--card);border-radius:999px;padding:.35rem .9rem;font-size:.9rem;display:inline-flex;align-items:center;gap:.35rem;font-weight:600}
+.chip.on{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.btn{border:1px solid var(--ink);background:var(--ink);color:var(--on-ink);padding:.6rem 1.05rem;border-radius:10px;font-weight:700;display:inline-flex;align-items:center;gap:.4rem;justify-content:center;box-shadow:var(--shadow)}
+.btn.ghost{background:var(--card);color:var(--text);border-color:var(--edge)}
+.btn.danger{background:var(--card);color:var(--text);border:1px dashed var(--edge)}
+.btn.sm{padding:.35rem .75rem;font-size:.85rem;border-radius:9px}
+input[type=text],input[type=url],input[type=number],input[type=datetime-local],select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:.55rem .75rem;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--ink);box-shadow:0 0 0 3px color-mix(in srgb,var(--ink) 14%,transparent)}
+label.f{display:block;font-size:.85rem;color:var(--muted);margin:.75rem 0 .25rem;font-weight:600}
+.sw{width:30px;height:30px;border-radius:50%;border:3px solid transparent;padding:0;outline:1px solid var(--line)}
+.sw.on{border-color:var(--card);outline:2px solid var(--ink)}
+.sync-line{display:flex;align-items:center;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem}
+.err{color:var(--text);font-weight:700}
+
+/* ---------- شريط المحاضرة الحالية ---------- */
+.banner{background:var(--ink);color:var(--on-ink);border-radius:var(--r);padding:1.1rem 1.2rem;margin:0 0 1.1rem;box-shadow:var(--hard);text-align:center}
+.banner .l1{font-size:.8rem;opacity:.75;letter-spacing:1px;text-transform:uppercase}
+.banner .l2{font-size:1.25rem;font-weight:800}
+.banner .l3{opacity:.9}
+.banner hr{border:0;border-top:1px solid color-mix(in srgb,var(--on-ink) 30%,transparent);margin:.7rem 0}
+.alert{background:var(--card);border:1.5px dashed var(--edge);color:var(--text);border-radius:var(--r);padding:.85rem 1rem;margin-bottom:1rem;box-shadow:var(--shadow)}
+.alert ul{margin:.4rem 0;padding-inline-start:1.2rem}
+
+/* ---------- المثبّتة + أيام الأسبوع ---------- */
+.strip{display:flex;gap:.6rem;overflow-x:auto;padding:.2rem .1rem .6rem;margin-bottom:.6rem;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.pin-card{flex:none;min-width:190px;background:var(--card);border:1px solid var(--edge);border-inline-start:6px solid var(--c);border-radius:10px;padding:.6rem .8rem;text-align:start;box-shadow:var(--shadow)}
+.pin-card b{display:block;font-size:.95rem}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:.4rem;margin:.6rem 0 1rem}
+.dchip{background:var(--card);border:1px solid var(--edge);border-radius:10px;padding:.45rem 0;display:flex;flex-direction:column;align-items:center;font-size:.78rem;color:var(--muted);box-shadow:var(--shadow)}
+.dchip b{font-size:1.05rem;color:var(--text)}
+.dchip.on{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.dchip.on b{color:var(--on-ink)}
+.dchip.today:not(.on){border:2px solid var(--ink)}
+.dchip i{width:5px;height:5px;border-radius:50%;background:var(--ink);margin-top:2px;visibility:hidden}
+.dchip.has i{visibility:visible}
+.dchip.on i{background:var(--on-ink)}
+
+/* ---------- المحاضرات ---------- */
+.dayhead{font-weight:800;margin:.9rem 0 .5rem;display:flex;gap:.5rem;align-items:baseline;justify-content:center;text-align:center}
+.dayhead.today{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+.evs{display:flex;flex-direction:column;gap:.6rem}
+.ev{display:flex;gap:.85rem;background:var(--card);border:1px solid var(--edge);border-radius:10px;padding:.8rem .95rem;text-align:start;width:100%;box-shadow:var(--shadow);border-inline-start:7px solid var(--c)}
+.ev .tm{min-width:64px;font-weight:800;font-variant-numeric:tabular-nums;font-size:.95rem}
+.ev .tm small{display:block;font-weight:500;color:var(--muted);font-size:.8rem}
+.ev .tt{font-weight:700}
+.ev .mt{color:var(--muted);font-size:.88rem}
+.ev .note{font-size:.85rem;margin-top:.25rem;color:var(--text);opacity:.8}
+.ev.now{outline:2px solid var(--ink);outline-offset:2px}
+.ev.past{background:var(--accent-soft);box-shadow:none}
+.ev.past .tt,.ev.past .tm{color:var(--muted);font-weight:600}
+.ev.cancelled .tt{text-decoration:line-through}
+.badge{background:transparent;color:var(--text);border:1px solid var(--edge);border-radius:6px;padding:0 .4rem;font-size:.75rem;font-weight:700}
+body[data-card=filled] .ev{background:color-mix(in srgb,var(--c) 14%,var(--card))}
+body[data-card=outline] .ev{border:2px solid var(--c);border-inline-start-width:2px;box-shadow:none}
+body[data-card=minimal] .ev{border:0;border-inline-start:0;background:transparent;box-shadow:none;border-bottom:1px solid var(--edge);border-radius:0}
+body[data-card=minimal] .ev .tt{color:var(--text);text-decoration:underline;text-decoration-color:var(--c);text-decoration-thickness:3px;text-underline-offset:4px}
+body[data-density=compact] .ev{padding:.4rem .7rem}
+body[data-density=compact] .ev .note{display:none}
+body[data-size=lg]{font-size:18px}
+body[data-size=sm]{font-size:14.5px}
+@media (min-width:900px){
+  .weekgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.9rem;align-items:start}
+  .weekgrid .ev{flex-direction:column;gap:.2rem}
+  .weekgrid .dayhead{margin-top:0}
+}
+.empty{text-align:center;color:var(--muted);padding:2rem 1rem}
+
+/* ---------- نافذة تفاصيل المحاضرة ---------- */
+#sheet{position:fixed;inset:0;z-index:50;display:none;background:rgba(0,0,0,.55);align-items:flex-end;justify-content:center}
+#sheet.open{display:flex}
+.sheet{background:var(--card);color:var(--text);width:100%;max-width:560px;max-height:90vh;overflow:auto;border-radius:18px 18px 0 0;border:1px solid var(--edge);padding:1.1rem 1.1rem calc(1.2rem + env(safe-area-inset-bottom));border-top:8px solid var(--c,var(--ink));box-shadow:var(--hard)}
+@media (min-width:700px){#sheet{align-items:center}.sheet{border-radius:16px}}
+.sheet-head{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem;margin-bottom:.4rem}
+.desc{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:.6rem .8rem;font-size:.9rem}
+
+/* ---------- المهام والدرجات ---------- */
+.task{display:flex;gap:.7rem;align-items:center;padding:.65rem 0;border-bottom:1px solid var(--line)}
+.task:last-child{border-bottom:0}
+.task input[type=checkbox]{width:22px;height:22px;accent-color:var(--ink)}
+.task.done .tt{text-decoration:line-through;color:var(--muted)}
+.tag{font-size:.75rem;border-radius:6px;padding:.05rem .5rem;border:1px solid var(--edge);color:var(--text)}
+.overdue{color:var(--text);font-weight:700;text-decoration:underline;text-decoration-style:dashed}
+.comp{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:.4rem;align-items:center;margin:.35rem 0}
+.comp.h{font-size:.75rem;color:var(--muted)}
+@media (max-width:520px){.comp{grid-template-columns:1.6fr 1fr 1fr 1fr auto;gap:.25rem}.comp input{padding:.45rem .4rem}}
+.stat{display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px dashed var(--line)}
+.stat:last-child{border:0}
+.big{font-size:2.1rem;font-weight:800;color:var(--text)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.grid2 > div:has(.big){text-align:center}
+details summary{cursor:pointer;font-weight:700}
+details{margin-top:.6rem}
+ol.steps{padding-inline-start:1.3rem;margin:.4rem 0}
+ol.steps li{margin:.3rem 0}
+code{background:var(--accent-soft);padding:.05rem .35rem;border-radius:6px;font-size:.85em;direction:ltr;unicode-bidi:embed}
+.card h3{margin-bottom:.2rem}
+
+/* ---------- تنبيه سريع ---------- */
+#toast{position:fixed;inset-inline:0;bottom:96px;display:flex;justify-content:center;z-index:60;pointer-events:none}
+#toast div{background:var(--ink);color:var(--on-ink);padding:.65rem 1.05rem;border-radius:10px;max-width:90%;opacity:0;transform:translateY(8px);transition:.25s;box-shadow:var(--hard)}
+#toast.show div{opacity:1;transform:none}
+
+.nc{display:flex;gap:.8rem;align-items:center;justify-content:space-between;flex-wrap:wrap;text-align:start}
+/* ---------- نص بديل لمحركات البحث (يختفي بعد تشغيل التطبيق) ---------- */
+.seo-fallback{max-width:640px;margin:3rem auto;padding:1.2rem;text-align:center}
+</style>
+</head>
+<body>
+<div id="app"><main class="seo-fallback">
+<h1>جدولي — جدولك الجامعي من Outlook مرتب وبتنبيهات</h1>
+<p>جدولي: موقع مجاني يحوّل جدول Outlook الجامعي إلى جدول مرتب وسهل، مع تنبيهات قبل المحاضرة، تتبع الدرجات، حاسبة المعدل التراكمي (GPA)، وقائمة مهام. يعمل على الجوال والكمبيوتر.</p>
+<p lang="en" dir="ltr">Free university timetable app: turn your Outlook calendar into a clean schedule with lecture reminders, grade tracking, a GPA calculator and tasks. Works on phone and desktop.</p>
+<noscript><p>يحتاج الموقع إلى تفعيل JavaScript. / Please enable JavaScript.</p></noscript>
+</main></div>
+<div id="sheet"></div>
+<div id="toast"><div></div></div>
+
+<script src="ics.js"></script>
+<script src="config.js"></script>
+<script>
+(function () {
+'use strict';
+
+/* =====================  Strings / النصوص  ===================== */
+const D = {
+  appName: ['جدولي', 'My Schedule'],
+  tab_schedule: ['الجدول', 'Schedule'], tab_grades: ['الدرجات', 'Grades'],
+  tab_tasks: ['المهام', 'Tasks'], tab_settings: ['الإعدادات', 'Settings'],
+  today: ['اليوم', 'Today'], day: ['يوم', 'Day'], week: ['أسبوع', 'Week'],
+  now: ['الآن', 'Now'], next: ['التالية', 'Next'], endsIn: ['تنتهي بعد', 'ends in'], startsIn: ['بعد', 'in'],
+  noUpcoming: ['لا توجد محاضرات قادمة', 'No upcoming lectures'],
+  noEvents: ['لا توجد محاضرات في هذا اليوم', 'No lectures on this day'],
+  cancelled: ['ملغاة', 'Cancelled'], pinned: ['المثبّتة', 'Pinned'],
+  lastSync: ['آخر تحديث', 'Last update'], never: ['لم يتم بعد', 'not yet'],
+  syncNow: ['تحديث', 'Refresh'], syncOk: ['تم تحديث الجدول ✓', 'Schedule updated ✓'],
+  syncFail: ['تعذّر جلب الجدول', 'Could not fetch the schedule'],
+  syncFailHint: ['تأكد من الرابط، أو ضع رابط البروكسي في الإعدادات، أو ارفع ملف ICS.', 'Check the link, set the proxy URL in Settings, or upload an ICS file.'],
+  changesTitle: ['تغييرات في جدولك', 'Changes in your schedule'], gotIt: ['تم', 'Got it'],
+  ch_added: ['محاضرة جديدة', 'New'], ch_removed: ['حُذفت', 'Removed'], ch_cancelled: ['أُلغيت', 'Cancelled'],
+  ch_moved: ['تغيّر الموعد', 'Rescheduled'], ch_room: ['تغيّرت القاعة', 'Room changed'], ch_title: ['تغيّر الاسم', 'Renamed'],
+  min: ['د', 'm'], hr: ['س', 'h'], dayShort: ['ي', 'd'],
+  /* welcome */
+  welcomeTitle: ['أهلاً! خلنا نجيب جدولك', "Welcome! Let's load your schedule"],
+  welcomeText: ['الصق رابط التقويم (ICS) من Outlook، وبيتحدّث الجدول عندك تلقائياً كل ما تغيّر.', 'Paste your Outlook calendar (ICS) link and it will update automatically whenever it changes.'],
+  icsUrl: ['رابط التقويم (ICS)', 'Calendar link (ICS)'], icsPlaceholder: ['https://outlook.office365.com/owa/calendar/…/calendar.ics', 'https://outlook.office365.com/owa/calendar/…/calendar.ics'],
+  load: ['تحميل الجدول', 'Load schedule'], uploadIcs: ['أو ارفع ملف ICS', 'Or upload an ICS file'],
+  tryDemo: ['جرّب بجدول تجريبي', 'Try a demo schedule'],
+  howTitle: ['وش هو ICS وكيف أحصل على الرابط؟', 'What is ICS and how do I get the link?'],
+  howWhat: ['ICS صيغة قياسية لملفات التقويم. رابط ICS من Outlook يعطي أي برنامج نسخة محدّثة من جدولك، والتطبيق يقرأه ويرتّبه لك.', 'ICS is the standard calendar format. An Outlook ICS link lets any app read an always-up-to-date copy of your schedule.'],
+  howSteps: [
+    ['افتح Outlook على الويب بحساب الجامعة (outlook.office.com).', 'Open Outlook on the web with your university account (outlook.office.com).'],
+    ['اضغط الإعدادات ← التقويم ← التقويمات المشتركة.', 'Click Settings → Calendar → Shared calendars.'],
+    ['تحت «نشر تقويم» اختر تقويم الجدول، والصلاحية «يمكنه عرض كل التفاصيل»، ثم «نشر».', 'Under “Publish a calendar” choose your schedule calendar, set “Can view all details”, then Publish.'],
+    ['انسخ رابط الـ ICS (ليس رابط HTML) والصقه هنا.', 'Copy the ICS link (not the HTML one) and paste it here.']
+  ],
+  howNote: ['إذا خيار النشر غير موجود، فالجامعة مقفلته. وقتها من Outlook على الكمبيوتر: ملف ← حفظ التقويم، وارفع ملف .ics هنا.', 'If the publish option is missing, your university disabled it. In desktop Outlook use File → Save Calendar and upload the .ics file here.'],
+  notifCardTitle: ['فعّل التنبيهات', 'Turn on reminders'],
+  notifCardText: ['يوصلك تنبيه قبل كل محاضرة بالوقت اللي تختاره.', 'Get a reminder before every lecture.'],
+  iosInstallTitle: ['أضف التطبيق للشاشة الرئيسية', 'Add the app to your Home Screen'],
+  iosInstallText: ['في الآيفون التنبيهات تشتغل من أيقونة التطبيق فقط: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية»، وافتح التطبيق من الأيقونة وفعّل التنبيهات.', 'On iPhone, alerts only work from the app icon: tap Share, then “Add to Home Screen”, open the app from the icon and turn on reminders.'],
+  later: ['لاحقاً', 'Later'],
+  pushEnable: ['فعّل التنبيهات حتى والتطبيق مقفل', 'Turn on alerts even when the app is closed'],
+  pushOn: ['تنبيهات الخلفية مفعّلة ✓ تصلك حتى والتطبيق مقفل', 'Background alerts are on ✓ they arrive even when the app is closed'],
+  pushDisable: ['إيقاف', 'Turn off'],
+  pushTest: ['جرّب: تنبيه بعد 20 ثانية', 'Test: alert in 20 seconds'],
+  pushTestSent: ['راح يوصلك تنبيه بعد 20 ثانية. اقفل التطبيق وانتظر.', 'You will get an alert in 20 seconds. Close the app and wait.'],
+  pushFail: ['تعذّر تفعيل التنبيهات', 'Could not turn on alerts'],
+  pushIcsErr: ['الخادم ما قدر يقرأ رابط الجدول. تأكد أنه رابط ICS من Outlook.', 'The server could not read the schedule link. Make sure it is an Outlook ICS link.'],
+  pushNoServer: ['التنبيهات بعد قفل التطبيق تحتاج نشر الموقع مع الخادم (شوف README).', 'Alerts after the app is closed need the site deployed with the server (see README).'],
+  /* sheet */
+  pin: ['تثبيت المادة', 'Pin course'], unpin: ['إلغاء التثبيت', 'Unpin'],
+  flag: ['علامة', 'Flag'], unflag: ['إزالة العلامة', 'Unflag'],
+  hide: ['إخفاء المادة', 'Hide course'], color: ['اللون', 'Color'], remind: ['التنبيه', 'Reminder'],
+  remindDefault: ['الافتراضي', 'Default'], remindOff: ['بدون تنبيه', 'No reminder'],
+  noteLabel: ['ملاحظاتي على المادة', 'My notes for this course'],
+  minBefore: ['دقائق قبل', 'min before'], atStart: ['وقت البداية', 'At start'],
+  /* grades */
+  gradesTitle: ['المواد والدرجات', 'Courses & grades'], addCourse: ['إضافة مادة', 'Add course'],
+  importCourses: ['استيراد المواد من الجدول', 'Import courses from schedule'],
+  courseName: ['اسم المادة', 'Course name'], credits: ['الساعات', 'Credits'],
+  compName: ['العنصر', 'Item'], weight: ['الوزن %', 'Weight %'], score: ['درجتي', 'Score'], outOf: ['من', 'Out of'],
+  addComp: ['إضافة عنصر (واجب/اختبار)', 'Add item (quiz/exam)'],
+  earned: ['المحصّل حتى الآن', 'Earned so far'], curPct: ['نسبتي في المُنجَز', 'Current average'],
+  target: ['الدرجة المستهدفة %', 'Target %'], needed: ['تحتاج في المتبقي', 'You need on the rest'],
+  remainingW: ['الوزن المتبقي', 'Remaining weight'], impossible: ['(فوق 100% — صعب)', '(over 100% — hard)'],
+  alreadyDone: ['تحقق الهدف ✓', 'Target reached ✓'], weightsWarn: ['مجموع الأوزان ليس 100%', 'Weights do not add up to 100%'],
+  letter: ['التقدير', 'Letter'], auto: ['تلقائي', 'Auto'],
+  gpaTitle: ['حاسبة المعدل', 'GPA calculator'], prevGpa: ['معدلي التراكمي السابق', 'Previous cumulative GPA'],
+  prevCredits: ['ساعاتي السابقة', 'Previous credits'], semGpa: ['معدل الفصل', 'Semester GPA'], cumGpa: ['المعدل التراكمي', 'Cumulative GPA'],
+  scaleTitle: ['سلم الدرجات (عدّله حسب جامعتك)', 'Grading scale (edit for your university)'],
+  minPct: ['من %', 'Min %'], points: ['النقاط', 'Points'], resetScale: ['إعادة الافتراضي', 'Reset default'],
+  noCourses: ['ما أضفت مواد بعد.', 'No courses yet.'],
+  /* tasks */
+  tasksTitle: ['المهام والمواعيد', 'Tasks & deadlines'], taskTitle: ['المهمة (تسليم، اختبار…)', 'Task (assignment, exam…)'],
+  due: ['الموعد', 'Due'], course: ['المادة', 'Course'], add: ['إضافة', 'Add'], noTasks: ['لا توجد مهام', 'No tasks'],
+  doneTasks: ['المنجزة', 'Completed'],
+  /* settings */
+  sSource: ['مصدر الجدول', 'Schedule source'], proxy: ['رابط البروكسي (اختياري)', 'Proxy URL (optional)'],
+  proxyHint: ['اتركه فارغاً. الموقع يستخدم بروكسي مدمج تلقائياً.', 'Leave empty. The site uses its built-in proxy automatically.'],
+  saveLoad: ['حفظ وتحديث', 'Save & refresh'], autoRefresh: ['التحديث التلقائي كل', 'Auto-refresh every'],
+  clearSource: ['حذف الجدول', 'Remove schedule'], usingDemo: ['تستخدم الجدول التجريبي', 'Using demo schedule'],
+  usingFile: ['الجدول من ملف مرفوع (لا يتحدّث تلقائياً)', 'Schedule from an uploaded file (no auto-update)'],
+  sNotif: ['التنبيهات', 'Notifications'], enableNotif: ['تفعيل إشعارات الجهاز', 'Enable device notifications'],
+  notifOn: ['الإشعارات مفعّلة ✓', 'Notifications enabled ✓'], notifBlocked: ['الإشعارات محظورة من إعدادات المتصفح', 'Notifications are blocked in browser settings'],
+  notifUnsupported: ['المتصفح لا يدعم الإشعارات (في الآيفون: أضف الموقع للشاشة الرئيسية أولاً)', 'Notifications unsupported (on iPhone: add the site to the Home Screen first)'],
+  remindBefore: ['نبّهني قبل المحاضرة بـ', 'Remind me before lectures'], taskRemind: ['نبّهني قبل موعد المهمة بـ', 'Remind me before tasks'],
+  sound: ['صوت منبّه داخل التطبيق', 'In-app alarm sound'], testNotif: ['تجربة تنبيه', 'Test alert'],
+  notifNote: ['مع «تنبيهات الخلفية» تصلك التنبيهات من الخادم حتى لو التطبيق مقفل. بدونها تشتغل فقط والتطبيق مفتوح.', 'With “background alerts” reminders come from the server even when the app is closed. Without them they only work while the app is open.'],
+  sLook: ['الشكل', 'Appearance'], language: ['اللغة', 'Language'], theme: ['المظهر', 'Theme'],
+  themeAuto: ['تلقائي', 'Auto'], themeLight: ['فاتح', 'Light'], themeDark: ['داكن', 'Dark'],
+  cardStyle: ['شكل البطاقات', 'Card style'], cs_stripe: ['شريط', 'Stripe'], cs_filled: ['ممتلئ', 'Filled'], cs_outline: ['إطار', 'Outline'], cs_minimal: ['بسيط', 'Minimal'],
+  density: ['الكثافة', 'Density'], dn_cozy: ['مريحة', 'Cozy'], dn_compact: ['مضغوطة', 'Compact'],
+  fontSize: ['حجم الخط', 'Font size'], fs_sm: ['صغير', 'Small'], fs_md: ['عادي', 'Normal'], fs_lg: ['كبير', 'Large'],
+  hour12: ['نظام 12 ساعة', '12-hour clock'], weekStart: ['بداية الأسبوع', 'Week starts on'], hideEmpty: ['إخفاء الأيام الفاضية في عرض الأسبوع', 'Hide empty days in week view'],
+  sHidden: ['المواد المخفية', 'Hidden courses'], show: ['إظهار', 'Show'],
+  sData: ['البيانات', 'Data'], exportData: ['تصدير نسخة احتياطية', 'Export backup'], importData: ['استيراد نسخة', 'Import backup'],
+  resetAll: ['مسح كل البيانات', 'Erase all data'], confirmReset: ['متأكد؟ بيتم مسح كل شيء.', 'Sure? Everything will be erased.'],
+  install: ['تثبيت التطبيق', 'Install app'],
+  iosTip: ['آيفون: زر المشاركة ← «إضافة إلى الشاشة الرئيسية». أندرويد: قائمة المتصفح ← «تثبيت التطبيق».', 'iPhone: Share → “Add to Home Screen”. Android: browser menu → “Install app”.'],
+  imported: ['تم الاستيراد ✓', 'Imported ✓'], badFile: ['ملف غير صالح', 'Invalid file'],
+  wd: [['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'], ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']],
+  starts: ['تبدأ', 'starts'], inMin: ['بعد {m} دقيقة', 'in {m} min'], lectureReminder: ['محاضرة', 'Lecture'], taskReminderT: ['موعد مهمة', 'Task due'],
+  scheduleChanged: ['تغيّر جدولك', 'Your schedule changed'], overdueLbl: ['متأخرة', 'Overdue'], delete: ['حذف', 'Delete'],
+  testBody: ['هذا تنبيه تجريبي', 'This is a test alert']
+};
+const WD_SHORT = [['أحد','اثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'], ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']];
+
+/* =====================  State  ===================== */
+const KEY = 'myschedule.v1';
+const PALETTE = ['#0a0a0a','#333333','#595959','#7f7f7f','#a6a6a6','#c8c8c8'];
+const DEFAULT_SCALE = [
+  {min:90,letter:'A',pts:4},{min:87,letter:'A-',pts:3.7},{min:84,letter:'B+',pts:3.3},{min:80,letter:'B',pts:3},
+  {min:77,letter:'B-',pts:2.7},{min:74,letter:'C+',pts:2.3},{min:70,letter:'C',pts:2},{min:67,letter:'C-',pts:1.7},
+  {min:64,letter:'D+',pts:1.3},{min:60,letter:'D',pts:1},{min:0,letter:'F',pts:0}
+];
+const DEFAULTS = () => ({
+  settings: { lang:'ar', theme:'auto', icsUrl:'', proxy:'', reminders:[10], taskRemind:60, alarmSound:true, autoMin:30,
+              hour12:true, weekStart:0, hideEmpty:true, cardStyle:'stripe', density:'cozy', fontSize:'md', viewMode:'day' },
+  courses:{}, grades:[], gpaPrev:{gpa:'',credits:''}, scale:DEFAULT_SCALE.map(x=>({...x})),
+  tasks:[], flags:{}, notified:{}, snapshot:null, icsText:'', lastSync:0, lastChanges:[], demo:false, push:{on:false}
+});
+function load() {
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (raw) { const o = JSON.parse(raw), d = DEFAULTS(); return {...d, ...o, settings:{...d.settings, ...(o.settings||{})}}; }
+  } catch (e) {}
+  return DEFAULTS();
+}
+let state = load();
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  if (state.push && state.push.on) schedulePushSync();
+}
+const S = () => state.settings;
+const ui = { tab:'schedule', day:sod(Date.now()), syncing:false, syncError:'', openCourse:{}, deferredInstall:null, pushKey:null, pushStatus:null, pushError:'', lastPushBody:'', pushTimer:null };
+let EV = [], EVMAP = {};
+
+/* =====================  Helpers  ===================== */
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const isAr = () => S().lang === 'ar';
+const t = k => { const v = D[k]; return v ? v[isAr() ? 0 : 1] : k; };
+const loc = () => isAr() ? 'ar-AE-u-nu-latn' : 'en-GB';
+function sod(ms) { const d = new Date(ms); d.setHours(0,0,0,0); return d.getTime(); }
+function addDays(ms, n) { const d = new Date(ms); d.setDate(d.getDate() + n); return d.getTime(); }
+const fmtTime = ms => new Date(ms).toLocaleTimeString(loc(), {hour:'numeric', minute:'2-digit', hour12:S().hour12});
+const fmtDay = (ms, o) => new Date(ms).toLocaleDateString(loc(), o || {weekday:'long', day:'numeric', month:'long'});
+const fmtDT = ms => new Date(ms).toLocaleString(loc(), {weekday:'short', day:'numeric', month:'short', hour:'numeric', minute:'2-digit', hour12:S().hour12});
+function cd(ms) {
+  const m = Math.max(1, Math.ceil(ms / 60000));
+  if (m < 60) return m + ' ' + t('min');
+  if (m < 1440) return Math.floor(m / 60) + t('hr') + ' ' + (m % 60 ? (m % 60) + t('min') : '');
+  return Math.floor(m / 1440) + ' ' + t('dayShort') + ' ' + Math.floor((m % 1440) / 60) + t('hr');
+}
+function hash(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return Math.abs(h); }
+const courseOf = title => state.courses[title] || {};
+const isDark = () => S().theme === 'dark' || (S().theme === 'auto' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+function adaptColor(c) { // رمادي → يُعكس في الوضع الداكن ليبقى ظاهراً
+  if (!isDark()) return c;
+  const m = /^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(c);
+  if (!m) return c;
+  const r = parseInt(m[1], 16), g = parseInt(m[2], 16), b = parseInt(m[3], 16);
+  if (r === g && g === b) { const v = (255 - r).toString(16).padStart(2, '0'); return '#' + v + v + v; }
+  return c;
+}
+const rawColorOf = title => courseOf(title).color || PALETTE[hash(title) % PALETTE.length];
+const colorOf = title => adaptColor(rawColorOf(title));
+const hidden = e => !!courseOf(e.title).hidden;
+const stripHtml = s => String(s || '').replace(/<[^>]*>/g, ' ').replace(/\s+\n/g, '\n').trim();
+function uid() { return Math.random().toString(36).slice(2, 10); }
+const LOGO = '<svg class="mark" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="6" y="10" width="52" height="49" rx="8"/><path d="M20 4v12M44 4v12M6 24h52"/><rect x="14" y="30" width="9" height="9" fill="currentColor" stroke="none"/><circle cx="32" cy="34.5" r="4.8" fill="currentColor" stroke="none"/><path d="M45 29.5 L50 39 H40 Z" fill="currentColor" stroke="none"/><path d="M18.5 43 L23.5 48 L18.5 53 L13.5 48 Z" fill="currentColor" stroke="none"/><circle cx="32" cy="48" r="3.6" stroke-width="2.6"/><rect x="40.5" y="43.5" width="9" height="9" stroke-width="2.6"/></svg>';
+function icon(n, cls) {
+  const P = {
+    cal:'<rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+    star:'<path d="M12 3l2.7 5.5 6 .9-4.4 4.2 1 6-5.3-2.8L6.7 19.6l1-6L3.3 9.4l6-.9z"/>',
+    tasks:'<path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/>',
+    gear:'<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>',
+    refresh:'<path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/>',
+    pin:'<path d="M12 17v5M9 3h6l-1 6 3 3v2H7v-2l3-3z"/>',
+    flag:'<path d="M5 21V4M5 4h12l-2 4 2 4H5"/>',
+    chev:'<path d="M9 6l6 6-6 6"/>',
+    x:'<path d="M6 6l12 12M18 6L6 18"/>',
+    trash:'<path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/>',
+    plus:'<path d="M12 5v14M5 12h14"/>'
+  };
+  return `<svg class="i ${cls || ''}" viewBox="0 0 24 24" aria-hidden="true">${P[n]}</svg>`;
+}
+
+/* =====================  Schedule data  ===================== */
+function loadEvents() {
+  EV = []; EVMAP = {};
+  if (!state.icsText) return;
+  try {
+    const now = Date.now();
+    EV = ICS.parse(state.icsText, addDays(sod(now), -35), addDays(sod(now), 150));
+    EV.forEach(e => { EVMAP[e.id] = e; });
+  } catch (err) { console.error(err); ui.syncError = String(err.message || err); }
+}
+const visibleEvents = () => EV.filter(e => !hidden(e));
+const eventsOnDay = ds => { const de = addDays(ds, 1); return visibleEvents().filter(e => e.start < de && (e.end > ds || e.start >= ds)); };
+
+function makeSnapshot() {
+  const from = sod(Date.now()), to = addDays(from, 21), map = {};
+  EV.forEach(e => { if (e.start >= from && e.start < to) map[e.id] = {u:e.uid, t:e.title, l:e.location, s:e.start, e:e.end, c:e.cancelled}; });
+  return { windowEnd: to, map };
+}
+function detectChanges(oldSnap) {
+  if (!oldSnap || !oldSnap.map) return [];
+  const now = Date.now(), from = sod(now), res = [], neu = makeSnapshot().map, old = oldSnap.map;
+  const removed = [], added = [];
+  Object.keys(old).forEach(id => {
+    const o = old[id]; if (o.s < from) return;
+    const n = neu[id];
+    if (!n) { removed.push({id, o}); return; }
+    if (n.c && !o.c) res.push({type:'ch_cancelled', title:n.t, when:n.s});
+    else if (n.s !== o.s || n.e !== o.e) res.push({type:'ch_moved', title:n.t, when:n.s, from:o.s});
+    else if (n.l !== o.l) res.push({type:'ch_room', title:n.t, when:n.s, detail:(o.l || '—') + ' → ' + (n.l || '—')});
+    else if (n.t !== o.t) res.push({type:'ch_title', title:n.t, when:n.s, detail:o.t + ' → ' + n.t});
+  });
+  Object.keys(neu).forEach(id => { if (!old[id] && neu[id].s < oldSnap.windowEnd) added.push({id, n:neu[id]}); });
+  // pair removed+added with same uid/title as "moved"
+  removed.forEach(r => {
+    const i = added.findIndex(a => a.n.u && a.n.u === r.o.u && a.n.t === r.o.t);
+    if (i >= 0) { res.push({type:'ch_moved', title:r.o.t, when:added[i].n.s, from:r.o.s}); added.splice(i, 1); }
+    else res.push({type:'ch_removed', title:r.o.t, when:r.o.s});
+  });
+  added.forEach(a => res.push({type:'ch_added', title:a.n.t, when:a.n.s}));
+  return res.slice(0, 30);
+}
+
+/* ---- fetching ---- */
+async function fetchText(u) {
+  const r = await fetch(u, {cache:'no-store'});
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  const tx = await r.text();
+  if (!/BEGIN:VCALENDAR/i.test(tx)) throw new Error('Not an ICS file');
+  return tx;
+}
+async function fetchICS(url) {
+  url = url.trim().replace(/^webcal:/i, 'https:');
+  try { return await fetchText(url); }
+  catch (e) {
+    let proxy = (S().proxy || (window.APP_CONFIG && APP_CONFIG.proxy) || '').trim();
+    if (!proxy && /^https?:$/.test(location.protocol)) proxy = location.origin + '/proxy'; // البروكسي المدمج مع الموقع
+    if (!proxy) throw e;
+    const pu = new URL(proxy, location.href); pu.searchParams.set('url', url);
+    return await fetchText(pu.toString());
+  }
+}
+async function sync(manual) {
+  if (ui.syncing) return;
+  if (state.demo) { state.icsText = demoICS(); loadEvents(); save(); render(); return; }
+  if (!S().icsUrl) return;
+  ui.syncing = true; ui.syncError = ''; renderStatus();
+  try {
+    const text = await fetchICS(S().icsUrl);
+    const oldSnap = state.snapshot;
+    state.icsText = text; loadEvents();
+    const ch = detectChanges(oldSnap);
+    state.snapshot = makeSnapshot();
+    state.lastSync = Date.now();
+    if (ch.length) {
+      state.lastChanges = ch.map(c => ({...c, ts:Date.now()}));
+      notify(t('scheduleChanged'), ch.slice(0, 3).map(c => t(c.type) + ': ' + c.title).join('\n'), 'sched-change');
+    }
+    if (manual) toast(t('syncOk'));
+  } catch (err) {
+    ui.syncError = String(err.message || err);
+    if (manual) toast(t('syncFail'));
+  }
+  ui.syncing = false; save(); render();
+}
+
+/* ---- demo ---- */
+function demoICS() {
+  const now = new Date(); now.setHours(0,0,0,0);
+  const monday = new Date(now); monday.setDate(now.getDate() - ((now.getDay() + 6) % 7));
+  const p = n => String(n).padStart(2, '0');
+  const ds = (d, h, m) => `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}T${p(h)}${p(m)}00`;
+  const base = d => { const x = new Date(monday); x.setDate(monday.getDate() + d); return x; };  // 0 = Monday
+  const L = [
+    ['CS101 Programming / البرمجة', 'SU,TU,TH', 8, 0, 9, 15, 'Lab B-204'],
+    ['MATH201 Calculus II / تفاضل وتكامل', 'SU,TU', 9, 30, 10, 45, 'Hall A-12'],
+    ['ENG102 Academic Writing', 'MO,WE', 11, 0, 12, 15, 'Room C-305'],
+    ['PHY110 Physics Lab / مختبر الفيزياء', 'WE', 13, 0, 15, 0, 'Lab P-01'],
+    ['ISL101 الثقافة الإسلامية', 'MO', 9, 0, 10, 15, 'قاعة D-110']
+  ];
+  const out = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//demo//EN'];
+  L.forEach((c, i) => {
+    const firstDay = base(c[1].indexOf('SU') >= 0 ? -1 : 0);
+    out.push('BEGIN:VEVENT', 'UID:demo-' + i, 'SUMMARY:' + c[0], 'LOCATION:' + c[6],
+      'DTSTART:' + ds(firstDay, c[2], c[3]), 'DTEND:' + ds(firstDay, c[4], c[5]),
+      'RRULE:FREQ=WEEKLY;BYDAY=' + c[1] + ';COUNT=60', 'END:VEVENT');
+  });
+  out.push('END:VCALENDAR');
+  return out.join('\r\n');
+}
+
+/* =====================  Notifications / reminders  ===================== */
+function toast(msg) {
+  const el = $('#toast'); el.firstElementChild.textContent = msg; el.classList.add('show');
+  clearTimeout(toast.tm); toast.tm = setTimeout(() => el.classList.remove('show'), 3500);
+}
+function beep() {
+  if (!S().alarmSound) return;
+  try {
+    const AC = window.AudioContext || window.webkitAudioContext, ctx = new AC(), o = ctx.createOscillator(), g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination); o.frequency.value = 880; g.gain.setValueAtTime(.25, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(.001, ctx.currentTime + .7); o.start(); o.stop(ctx.currentTime + .75);
+  } catch (e) {}
+}
+async function notify(title, body, tag) {
+  toast(title + ' — ' + body.split('\n')[0]); beep();
+  if (!('Notification' in window) || Notification.permission !== 'granted') return;
+  const opts = { body, tag, icon:'icons/icon-192.png', badge:'icons/icon-192.png', lang:S().lang, dir:isAr() ? 'rtl' : 'ltr', vibrate:[120, 60, 120] };
+  try {
+    const reg = 'serviceWorker' in navigator ? await navigator.serviceWorker.getRegistration() : null;
+    if (reg) return await reg.showNotification(title, opts);
+  } catch (e) {}
+  try { new Notification(title, opts); } catch (e) {}
+}
+function checkReminders() {
+  const now = Date.now(), s = S();
+  EV.forEach(e => {
+    if (e.cancelled || e.allDay || e.start < now || e.start - now > 26 * 3600e3 || hidden(e)) return;
+    const c = courseOf(e.title);
+    const list = c.remind === 'off' ? [] : (typeof c.remind === 'number' ? [c.remind] : s.reminders);
+    list.forEach(m => {
+      const key = 'e|' + e.id + '|' + m;
+      if (state.notified[key] || now < e.start - m * 60000) return;
+      state.notified[key] = now;
+      const left = Math.max(0, Math.ceil((e.start - now) / 60000));
+      notify(`${t('lectureReminder')}: ${e.title}`, `${left > 0 ? t('inMin').replace('{m}', left) : t('now')} · ${fmtTime(e.start)}${e.location ? ' · ' + e.location : ''}`, key);
+    });
+  });
+  state.tasks.forEach(k => {
+    if (k.done || !k.due) return;
+    const key = 't|' + k.id;
+    if (state.notified[key] || now < k.due - s.taskRemind * 60000 || now > k.due + 6 * 3600e3) return;
+    state.notified[key] = now;
+    notify(`${t('taskReminderT')}: ${k.title}`, fmtDT(k.due), key);
+  });
+  const cut = now - 8 * 86400e3; let dirty = false;
+  Object.keys(state.notified).forEach(k => { if (state.notified[k] < cut) { delete state.notified[k]; dirty = true; } });
+  save();
+}
+
+/* =====================  Views  ===================== */
+function bannerHTML() {
+  const now = Date.now(), list = visibleEvents().filter(e => !e.cancelled && !e.allDay);
+  const cur = list.find(e => e.start <= now && e.end > now), nxt = list.find(e => e.start > now);
+  if (!cur && !nxt) return `<div class="banner"><div class="l2">${t('noUpcoming')}</div></div>`;
+  let h = '<div class="banner">';
+  if (cur) h += `<div class="l1">${t('now')}</div><div class="l2">${esc(cur.title)}</div><div class="l3">${t('endsIn')} ${cd(cur.end - now)}${cur.location ? ' · ◆ ' + esc(cur.location) : ''}</div>`;
+  if (cur && nxt) h += '<hr>';
+  if (nxt) {
+    const sameDay = sod(nxt.start) === sod(now);
+    h += `<div class="l1">${t('next')}</div><div class="l2">${esc(nxt.title)}</div><div class="l3">${t('startsIn')} ${cd(nxt.start - now)} · ${sameDay ? '' : fmtDay(nxt.start, {weekday:'long'}) + ' '}${fmtTime(nxt.start)}${nxt.location ? ' · ◆ ' + esc(nxt.location) : ''}</div>`;
+  }
+  return h + '</div>';
+}
+function evCard(e, now) {
+  const c = courseOf(e.title), isNow = e.start <= now && e.end > now && !e.cancelled, past = e.end <= now;
+  const dur = Math.round((e.end - e.start) / 60000);
+  return `<button class="ev ${isNow ? 'now' : ''} ${past ? 'past' : ''} ${e.cancelled ? 'cancelled' : ''}" style="--c:${colorOf(e.title)}" data-act="openEv" data-id="${esc(e.id)}">
+    <div class="tm">${e.allDay ? '—' : fmtTime(e.start)}${e.allDay ? '' : `<small>${fmtTime(e.end)}</small>`}</div>
+    <div class="grow">
+      <div class="tt">${esc(e.title)} ${c.pinned ? icon('pin', 's') : ''}${state.flags[e.id] ? icon('flag', 's') : ''} ${e.cancelled ? `<span class="badge">${t('cancelled')}</span>` : ''}</div>
+      <div class="mt">${e.location ? '◆ ' + esc(e.location) + ' · ' : ''}${dur >= 60 ? Math.floor(dur / 60) + t('hr') + (dur % 60 ? ' ' + (dur % 60) + t('min') : '') : dur + ' ' + t('min')}</div>
+      ${c.note ? `<div class="note">≡ ${esc(c.note).slice(0, 90)}</div>` : ''}
+    </div></button>`;
+}
+function dayBlock(ds, now, showHead) {
+  const evs = eventsOnDay(ds), isToday = sod(now) === ds;
+  let h = '';
+  if (showHead) h += `<div class="dayhead ${isToday ? 'today' : ''}">${fmtDay(ds)} ${isToday ? '· ' + t('today') : ''}</div>`;
+  h += evs.length ? `<div class="evs">${evs.map(e => evCard(e, now)).join('')}</div>` : (showHead ? '' : `<div class="empty">${t('noEvents')}</div>`);
+  return h;
+}
+function weekStartOf(ms) { const d = new Date(ms); return addDays(sod(ms), -((d.getDay() - S().weekStart + 7) % 7)); }
+
+/* =====================  Background push (works when the app is closed)  ===================== */
+function iosNeedsInstall() {
+  const ua = navigator.userAgent || '';
+  const ios = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const standalone = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone;
+  return ios && !standalone;
+}
+function b64uToBytes(s) {
+  const b = atob(s.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((s.length + 3) % 4));
+  return Uint8Array.from(b, c => c.charCodeAt(0));
+}
+const sameBytes = (a, b) => a.length === b.length && a.every((v, i) => v === b[i]);
+const JSONH = {'Content-Type':'application/json'};
+function pushPayload(endpoint) {
+  const s = S(), courses = {};
+  Object.keys(state.courses).forEach(k => {
+    const c = state.courses[k], rem = c.remind === 'off' ? 'off' : (typeof c.remind === 'number' ? c.remind : null);
+    if (c.hidden || rem !== null) courses[k] = {hidden: !!c.hidden, remind: rem};
+  });
+  const tasks = state.tasks.filter(k => !k.done && k.due).map(k => ({id:k.id, title:k.title, due:k.due}));
+  const p = { endpoint, icsUrl:s.icsUrl, reminders:s.reminders, taskRemind:+s.taskRemind, lang:s.lang,
+              tz:(Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'), hour12:!!s.hour12, courses, tasks };
+  if (!s.icsUrl && !state.demo && state.icsText && state.icsText.length < 550000) p.icsText = state.icsText;
+  return p;
+}
+async function pushSync(force) {
+  if (!(state.push && state.push.on) || !ui.pushKey || !('serviceWorker' in navigator)) return;
+  try {
+    const reg = await navigator.serviceWorker.ready, sub = await reg.pushManager.getSubscription();
+    if (!sub) return;
+    const body = JSON.stringify(pushPayload(sub.endpoint));
+    if (!force && body === ui.lastPushBody) return;
+    const r = await fetch('/api/sync', {method:'POST', headers:JSONH, body});
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    ui.lastPushBody = body; ui.pushStatus = await r.json(); ui.pushError = '';
+    if (ui.tab === 'settings') render();
+  } catch (e) { ui.pushError = String(e.message || e); }
+}
+function schedulePushSync() { clearTimeout(ui.pushTimer); ui.pushTimer = setTimeout(() => pushSync(false), 2500); }
+async function enablePush() {
+  if (!ui.pushKey) return false;
+  try {
+    if (!('serviceWorker' in navigator) || !('PushManager' in window)) throw new Error('unsupported');
+    const reg = await navigator.serviceWorker.ready, keyBytes = b64uToBytes(ui.pushKey);
+    let sub = await reg.pushManager.getSubscription();
+    if (sub && sub.options && sub.options.applicationServerKey && !sameBytes(new Uint8Array(sub.options.applicationServerKey), keyBytes)) { await sub.unsubscribe(); sub = null; }
+    if (!sub) sub = await reg.pushManager.subscribe({userVisibleOnly:true, applicationServerKey:keyBytes});
+    state.push = {on:true}; save();
+    await pushSync(true);
+    toast(t('pushOn'));
+    return true;
+  } catch (e) { ui.pushError = String(e.message || e); toast(t('pushFail')); return false; }
+}
+async function disablePush() {
+  try {
+    const reg = await navigator.serviceWorker.ready, sub = await reg.pushManager.getSubscription();
+    if (sub) { await fetch('/api/unsubscribe', {method:'POST', headers:JSONH, body:JSON.stringify({endpoint:sub.endpoint})}).catch(() => {}); await sub.unsubscribe(); }
+  } catch (e) {}
+  state.push = {on:false}; ui.pushStatus = null; save(); render();
+}
+function pushBlock() {
+  if (!ui.pushKey) return `<p class="muted small">${t('pushNoServer')}</p>`;
+  if (iosNeedsInstall()) return `<p class="small">${t('iosInstallText')}</p>`;
+  const granted = ('Notification' in window) && Notification.permission === 'granted';
+  if (state.push && state.push.on && granted) {
+    return `<p style="color:var(--ok);font-weight:700">${t('pushOn')}</p>
+      ${ui.pushStatus && ui.pushStatus.icsOk === false ? `<p class="err small">${t('pushIcsErr')}</p>` : ''}
+      <div class="row wrap"><button class="btn ghost sm" data-act="pushTest">${t('pushTest')}</button><button class="btn danger sm" data-act="pushOff">${t('pushDisable')}</button></div>`;
+  }
+  return `<button class="btn" data-act="pushOn">${t('pushEnable')}</button>${ui.pushError ? `<p class="err small">${esc(ui.pushError)}</p>` : ''}`;
+}
+
+function notifCard() {
+  if (state.hideNotifCard) return '';
+  const ua = navigator.userAgent || '';
+  const ios = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const standalone = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone;
+  const perm = ('Notification' in window) ? Notification.permission : 'unsupported';
+  if (perm === 'granted' && ui.pushKey && !(state.push && state.push.on) && !iosNeedsInstall()) return `<div class="card nc"><div class="grow"><b>${t('pushEnable')}</b><div class="muted small">${t('notifCardText')}</div></div><div class="row"><button class="btn sm" data-act="pushOn">${t('pushEnable')}</button><button class="btn ghost sm" data-act="hideNotifCard">${t('later')}</button></div></div>`;
+  if (perm === 'granted' || perm === 'denied') return '';
+  if (ios && !standalone) return `<div class="card nc"><div class="grow"><b>${t('iosInstallTitle')}</b><div class="muted small">${t('iosInstallText')}</div></div><button class="btn ghost sm" data-act="hideNotifCard">${t('later')}</button></div>`;
+  if (perm === 'unsupported') return '';
+  return `<div class="card nc"><div class="grow"><b>${t('notifCardTitle')}</b><div class="muted small">${t('notifCardText')}</div></div><div class="row"><button class="btn sm" data-act="askNotif">${t('enableNotif')}</button><button class="btn ghost sm" data-act="hideNotifCard">${t('later')}</button></div></div>`;
+}
+function viewSchedule() {
+  if (!state.icsText) return viewWelcome();
+  const now = Date.now(), s = S(), wk = weekStartOf(ui.day);
+  let h = '';
+  if (state.lastChanges.length) {
+    h += `<div class="alert"><b>◉ ${t('changesTitle')}</b><ul>${state.lastChanges.map(c =>
+      `<li><b>${t(c.type)}</b> — ${esc(c.title)} · ${fmtDT(c.when)}${c.from ? ' (' + (isAr() ? 'كان' : 'was') + ' ' + fmtDT(c.from) + ')' : ''}${c.detail ? ' · ' + esc(c.detail) : ''}</li>`).join('')}</ul>
+      <button class="btn sm" data-act="dismissChanges">${t('gotIt')}</button></div>`;
+  }
+  h += notifCard();
+  h += `<div id="banner">${bannerHTML()}</div>`;
+  const pins = Object.keys(state.courses).filter(k => state.courses[k].pinned && !state.courses[k].hidden);
+  if (pins.length) {
+    const cards = pins.map(title => {
+      const e = EV.find(x => x.title === title && x.end > now && !x.cancelled);
+      return e ? `<button class="pin-card" style="--c:${colorOf(title)}" data-act="openEv" data-id="${esc(e.id)}"><b>${esc(title)}</b><span class="muted small">${fmtDay(e.start, {weekday:'short'})} ${fmtTime(e.start)}${e.location ? ' · ' + esc(e.location) : ''}</span></button>` : '';
+    }).join('');
+    if (cards) h += `<div class="small muted" style="margin-bottom:.3rem">${icon('pin', 's')} ${t('pinned')}</div><div class="strip">${cards}</div>`;
+  }
+  h += `<div class="sync-line"><div class="row">
+      <button class="chip ${s.viewMode === 'day' ? 'on' : ''}" data-act="view" data-v="day">${t('day')}</button>
+      <button class="chip ${s.viewMode === 'week' ? 'on' : ''}" data-act="view" data-v="week">${t('week')}</button>
+      <button class="chip" data-act="goToday">${t('today')}</button></div>
+    <div class="row">
+      <button class="icon-btn pv" data-act="prev" aria-label="prev">${icon('chev')}</button>
+      <button class="icon-btn nx" data-act="nextp" aria-label="next">${icon('chev')}</button>
+    </div></div>`;
+  if (s.viewMode === 'day') {
+    h += '<div class="days">';
+    for (let i = 0; i < 7; i++) {
+      const d = addDays(wk, i), dt = new Date(d);
+      h += `<button class="dchip ${d === ui.day ? 'on' : ''} ${d === sod(now) ? 'today' : ''} ${eventsOnDay(d).length ? 'has' : ''}" data-act="pickDay" data-d="${d}">${WD_SHORT[isAr() ? 0 : 1][dt.getDay()]}<b>${dt.getDate()}</b><i></i></button>`;
+    }
+    h += '</div>';
+    h += `<div class="dayhead ${ui.day === sod(now) ? 'today' : ''}">${fmtDay(ui.day)}</div>` + dayBlock(ui.day, now, false);
+  } else {
+    h += `<div class="muted small" style="margin-bottom:.4rem">${fmtDay(wk, {day:'numeric', month:'short'})} – ${fmtDay(addDays(wk, 6), {day:'numeric', month:'short'})}</div><div class="weekgrid">`;
+    let any = false;
+    for (let i = 0; i < 7; i++) {
+      const d = addDays(wk, i), has = eventsOnDay(d).length > 0;
+      if (!has && s.hideEmpty) continue;
+      any = true; h += `<div>${dayBlock(d, now, true)}</div>`;
+    }
+    if (!any) h += `<div class="empty">${t('noEvents')}</div>`;
+    h += '</div>';
+  }
+  return h;
+}
+function viewWelcome() {
+  return `<div class="card"><h2>${t('welcomeTitle')}</h2><p class="muted">${t('welcomeText')}</p>
+    <label class="f">${t('icsUrl')}</label>
+    <input type="url" id="w-url" dir="ltr" placeholder="${t('icsPlaceholder')}">
+    <div class="row wrap" style="margin-top:.8rem">
+      <button class="btn" data-act="loadUrl">${t('load')}</button>
+      <label class="btn ghost" style="cursor:pointer">${t('uploadIcs')}<input type="file" accept=".ics,text/calendar" data-change="uploadIcs" hidden></label>
+      <button class="btn ghost" data-act="demo">${t('tryDemo')}</button>
+    </div>
+    ${ui.syncError ? `<p class="err small">${t('syncFail')}: ${esc(ui.syncError)}<br>${t('syncFailHint')}</p>` : ''}
+    <details><summary>${t('howTitle')}</summary><p>${t('howWhat')}</p>
+      <ol class="steps">${D.howSteps.map(x => `<li>${x[isAr() ? 0 : 1]}</li>`).join('')}</ol><p class="muted small">${t('howNote')}</p></details></div>`;
+}
+
+/* ---- grades ---- */
+function calc(g) {
+  let gradedW = 0, earned = 0, totalW = 0;
+  g.components.forEach(c => {
+    const w = +c.weight || 0; totalW += w;
+    if (c.score !== '' && c.score != null && +c.max > 0) { gradedW += w; earned += w * (+c.score / +c.max); }
+  });
+  const remW = Math.max(0, totalW - gradedW), tg = +g.target || 0;
+  return { gradedW, earned, totalW, remW, cur: gradedW > 0 ? earned / gradedW * 100 : null, need: remW > 0 ? (tg - earned) / remW * 100 : null };
+}
+function letterFor(pct) { const s = [...state.scale].sort((a, b) => b.min - a.min).find(x => pct >= x.min); return s ? s.letter : null; }
+function gradeLetter(g) { if (g.letter) return g.letter; const k = calc(g); return k.cur != null ? letterFor(k.cur) : null; }
+function gpaStats() {
+  let pts = 0, cr = 0;
+  state.grades.forEach(g => {
+    const l = gradeLetter(g), sc = state.scale.find(x => x.letter === l), c = +g.credits || 0;
+    if (sc && c > 0) { pts += sc.pts * c; cr += c; }
+  });
+  const sem = cr ? pts / cr : null, pg = parseFloat(state.gpaPrev.gpa), pc = parseFloat(state.gpaPrev.credits);
+  let cum = sem;
+  if (!isNaN(pg) && !isNaN(pc) && pc >= 0 && pc + cr > 0) cum = (pg * pc + pts) / (pc + cr);
+  return { sem, cum, cr };
+}
+const f1 = (n, d) => n == null || isNaN(n) ? '—' : (+n).toFixed(d == null ? 1 : d).replace(/\.0+$/, '');
+function viewGrades() {
+  const st = gpaStats();
+  let h = `<h2>${t('gradesTitle')}</h2>
+  <div class="card"><div class="grid2">
+    <div><div class="muted small">${t('semGpa')}</div><div class="big">${f1(st.sem, 2)}</div></div>
+    <div><div class="muted small">${t('cumGpa')}</div><div class="big">${f1(st.cum, 2)}</div></div></div>
+    <div class="grid2"><div><label class="f">${t('prevGpa')}</label><input type="number" step="0.01" min="0" inputmode="decimal" value="${esc(state.gpaPrev.gpa)}" data-change="gpaPrev" data-k="gpa"></div>
+    <div><label class="f">${t('prevCredits')}</label><input type="number" step="1" min="0" inputmode="numeric" value="${esc(state.gpaPrev.credits)}" data-change="gpaPrev" data-k="credits"></div></div></div>
+  <div class="row wrap" style="margin-bottom:.8rem">
+    <button class="btn" data-act="addCourse">${icon('plus', 's')} ${t('addCourse')}</button>
+    <button class="btn ghost" data-act="importCourses">${t('importCourses')}</button></div>`;
+  if (!state.grades.length) h += `<div class="empty">${t('noCourses')}</div>`;
+  state.grades.forEach(g => {
+    const k = calc(g), open = ui.openCourse[g.id], auto = (g.letter ? null : gradeLetter(g));
+    h += `<div class="card"><div class="row">
+      <input type="text" class="grow" placeholder="${t('courseName')}" value="${esc(g.name)}" data-change="gField" data-id="${g.id}" data-k="name">
+      <button class="icon-btn" data-act="toggleCourse" data-id="${g.id}"><span style="display:inline-flex;transform:rotate(${open ? 90 : 0}deg)">${icon('chev')}</span></button></div>
+      <div class="grid2"><div><label class="f">${t('credits')}</label><input type="number" min="0" step="1" inputmode="numeric" value="${esc(g.credits)}" data-change="gField" data-id="${g.id}" data-k="credits"></div>
+      <div><label class="f">${t('letter')}</label><select data-change="gField" data-id="${g.id}" data-k="letter">
+        <option value="">${t('auto')}${auto ? ' (' + auto + ')' : ''}</option>${state.scale.map(x => `<option ${g.letter === x.letter ? 'selected' : ''}>${esc(x.letter)}</option>`).join('')}</select></div></div>`;
+    if (open) {
+      h += `<div style="margin-top:.8rem"><div class="comp h"><span>${t('compName')}</span><span>${t('weight')}</span><span>${t('score')}</span><span>${t('outOf')}</span><span></span></div>`;
+      g.components.forEach(c => {
+        h += `<div class="comp"><input type="text" value="${esc(c.name)}" data-change="cField" data-id="${g.id}" data-cid="${c.id}" data-k="name">
+          <input type="number" min="0" inputmode="decimal" value="${esc(c.weight)}" data-change="cField" data-id="${g.id}" data-cid="${c.id}" data-k="weight">
+          <input type="number" min="0" inputmode="decimal" value="${esc(c.score)}" data-change="cField" data-id="${g.id}" data-cid="${c.id}" data-k="score">
+          <input type="number" min="0" inputmode="decimal" value="${esc(c.max)}" data-change="cField" data-id="${g.id}" data-cid="${c.id}" data-k="max">
+          <button class="icon-btn" style="width:34px;height:34px" data-act="delComp" data-id="${g.id}" data-cid="${c.id}">${icon('x', 's')}</button></div>`;
+      });
+      h += `<button class="btn ghost sm" data-act="addComp" data-id="${g.id}">${icon('plus', 's')} ${t('addComp')}</button>
+        <label class="f">${t('target')}</label><input type="number" min="0" max="100" inputmode="decimal" value="${esc(g.target)}" data-change="gField" data-id="${g.id}" data-k="target">
+        <div style="margin-top:.7rem">
+        <div class="stat"><span>${t('earned')}</span><b>${f1(k.earned)} / ${f1(k.totalW)}</b></div>
+        <div class="stat"><span>${t('curPct')}</span><b>${f1(k.cur)}%</b></div>
+        <div class="stat"><span>${t('remainingW')}</span><b>${f1(k.remW)}%</b></div>
+        <div class="stat"><span>${t('needed')}</span><b>${k.remW <= 0 ? '—' : (k.need <= 0 ? t('alreadyDone') : f1(k.need) + '%' + (k.need > 100 ? ' ' + t('impossible') : ''))}</b></div></div>
+        ${Math.abs(k.totalW - 100) > .01 && g.components.length ? `<p class="small err">! ${t('weightsWarn')} (${f1(k.totalW)}%)</p>` : ''}
+        <div style="margin-top:.6rem"><button class="btn danger sm" data-act="delCourse" data-id="${g.id}">${icon('trash', 's')} ${t('delete')}</button></div></div>`;
+    }
+    h += '</div>';
+  });
+  h += `<details class="card"><summary>${t('scaleTitle')}</summary>
+    <div class="comp h" style="grid-template-columns:1fr 1fr 1fr"><span>${t('letter')}</span><span>${t('minPct')}</span><span>${t('points')}</span></div>
+    ${state.scale.map((x, i) => `<div class="comp" style="grid-template-columns:1fr 1fr 1fr"><input type="text" value="${esc(x.letter)}" data-change="scaleF" data-i="${i}" data-k="letter">
+      <input type="number" value="${x.min}" data-change="scaleF" data-i="${i}" data-k="min"><input type="number" step="0.1" value="${x.pts}" data-change="scaleF" data-i="${i}" data-k="pts"></div>`).join('')}
+    <button class="btn ghost sm" data-act="resetScale">${t('resetScale')}</button></details>`;
+  return h;
+}
+
+/* ---- tasks ---- */
+function viewTasks() {
+  const titles = [...new Set(EV.map(e => e.title))].sort();
+  const pend = state.tasks.filter(x => !x.done).sort((a, b) => (a.due || 9e15) - (b.due || 9e15)), done = state.tasks.filter(x => x.done);
+  const row = k => `<div class="task ${k.done ? 'done' : ''}"><input type="checkbox" ${k.done ? 'checked' : ''} data-change="taskDone" data-id="${k.id}">
+    <div class="grow"><div class="tt">${esc(k.title)} ${k.course ? `<span class="tag">${esc(k.course)}</span>` : ''}</div>
+    ${k.due ? `<div class="small ${!k.done && k.due < Date.now() ? 'overdue' : 'muted'}">${fmtDT(k.due)}${!k.done && k.due < Date.now() ? ' · ' + t('overdueLbl') : ''}</div>` : ''}</div>
+    <button class="icon-btn" style="width:34px;height:34px" data-act="delTask" data-id="${k.id}">${icon('x', 's')}</button></div>`;
+  return `<h2>${t('tasksTitle')}</h2><div class="card">
+    <input type="text" id="tk-title" placeholder="${t('taskTitle')}">
+    <div class="grid2"><div><label class="f">${t('due')}</label><input type="datetime-local" id="tk-due"></div>
+    <div><label class="f">${t('course')}</label><input type="text" id="tk-course" list="tk-courses"><datalist id="tk-courses">${titles.map(x => `<option value="${esc(x)}">`).join('')}</datalist></div></div>
+    <div style="margin-top:.8rem"><button class="btn" data-act="addTask">${icon('plus', 's')} ${t('add')}</button></div></div>
+    <div class="card">${pend.length ? pend.map(row).join('') : `<div class="empty">${t('noTasks')}</div>`}</div>
+    ${done.length ? `<details class="card"><summary>${t('doneTasks')} (${done.length})</summary>${done.map(row).join('')}</details>` : ''}`;
+}
+
+/* ---- settings ---- */
+function seg(key, opts, cur) { return `<div class="row wrap">${opts.map(o => `<button class="chip ${cur === o[0] ? 'on' : ''}" data-act="setVal" data-key="${key}" data-val="${o[0]}">${o[1]}</button>`).join('')}</div>`; }
+function viewSettings() {
+  const s = S(), perm = ('Notification' in window) ? Notification.permission : 'unsupported';
+  const rm = [0, 5, 10, 15, 30, 60];
+  const hiddenList = Object.keys(state.courses).filter(k => state.courses[k].hidden);
+  const src = state.demo ? t('usingDemo') : (!s.icsUrl && state.icsText ? t('usingFile') : '');
+  return `<h2>${t('tab_settings')}</h2>
+  <div class="card"><h3>${t('sSource')}</h3>
+    <label class="f">${t('icsUrl')}</label><input type="url" dir="ltr" value="${esc(s.icsUrl)}" data-change="set" data-key="icsUrl" placeholder="${t('icsPlaceholder')}">
+    <label class="f">${t('proxy')}</label><input type="url" dir="ltr" value="${esc(s.proxy)}" data-change="set" data-key="proxy" placeholder="https://xxxx.workers.dev">
+    <p class="muted small">${t('proxyHint')}</p>
+    ${src ? `<p class="small">◆ ${src}</p>` : ''}
+    ${ui.syncError ? `<p class="err small">${t('syncFail')}: ${esc(ui.syncError)}</p>` : ''}
+    <div class="row wrap"><button class="btn" data-act="syncManual">${t('saveLoad')}</button>
+      <label class="btn ghost" style="cursor:pointer">${t('uploadIcs')}<input type="file" accept=".ics,text/calendar" data-change="uploadIcs" hidden></label>
+      <button class="btn danger" data-act="clearSource">${t('clearSource')}</button></div>
+    <label class="f">${t('autoRefresh')}</label>
+    ${seg('autoMin', [[15, '15 ' + t('min')], [30, '30 ' + t('min')], [60, '60 ' + t('min')], [0, isAr() ? 'يدوي' : 'Manual']], +s.autoMin)}</div>
+  <div class="card"><h3>${t('sNotif')}</h3>
+    ${perm === 'granted' ? `<p class="ok" style="color:var(--ok)">${t('notifOn')}</p>` : perm === 'denied' ? `<p class="err">${t('notifBlocked')}</p>` : perm === 'unsupported' ? `<p class="err small">${t('notifUnsupported')}</p>` : `<button class="btn" data-act="askNotif">◉ ${t('enableNotif')}</button>`}
+    ${pushBlock()}
+    <label class="f">${t('remindBefore')}</label>
+    <div class="row wrap">${rm.map(m => `<button class="chip ${s.reminders.includes(m) ? 'on' : ''}" data-act="toggleRemind" data-m="${m}">${m === 0 ? t('atStart') : m + ' ' + t('min')}</button>`).join('')}</div>
+    <label class="f">${t('taskRemind')}</label>
+    ${seg('taskRemind', [[15, '15 ' + t('min')], [60, '1 ' + t('hr')], [180, '3 ' + t('hr')], [1440, '1 ' + t('dayShort')]], +s.taskRemind)}
+    <label class="f"><input type="checkbox" ${s.alarmSound ? 'checked' : ''} data-change="set" data-key="alarmSound" data-bool="1"> ${t('sound')}</label>
+    <button class="btn ghost sm" data-act="testNotif">${t('testNotif')}</button>
+    <p class="muted small">${t('notifNote')}</p></div>
+  <div class="card"><h3>${t('sLook')}</h3>
+    <label class="f">${t('language')}</label>${seg('lang', [['ar', 'العربية'], ['en', 'English']], s.lang)}
+    <label class="f">${t('theme')}</label>${seg('theme', [['auto', t('themeAuto')], ['light', t('themeLight')], ['dark', t('themeDark')]], s.theme)}
+    <label class="f">${t('cardStyle')}</label>${seg('cardStyle', [['stripe', t('cs_stripe')], ['filled', t('cs_filled')], ['outline', t('cs_outline')], ['minimal', t('cs_minimal')]], s.cardStyle)}
+    <label class="f">${t('density')}</label>${seg('density', [['cozy', t('dn_cozy')], ['compact', t('dn_compact')]], s.density)}
+    <label class="f">${t('fontSize')}</label>${seg('fontSize', [['sm', t('fs_sm')], ['md', t('fs_md')], ['lg', t('fs_lg')]], s.fontSize)}
+    <label class="f">${t('weekStart')}</label>${seg('weekStart', [[6, D.wd[isAr() ? 0 : 1][6]], [0, D.wd[isAr() ? 0 : 1][0]], [1, D.wd[isAr() ? 0 : 1][1]]], +s.weekStart)}
+    <label class="f"><input type="checkbox" ${s.hour12 ? 'checked' : ''} data-change="set" data-key="hour12" data-bool="1"> ${t('hour12')}</label>
+    <label class="f"><input type="checkbox" ${s.hideEmpty ? 'checked' : ''} data-change="set" data-key="hideEmpty" data-bool="1"> ${t('hideEmpty')}</label></div>
+  ${hiddenList.length ? `<div class="card"><h3>${t('sHidden')}</h3>${hiddenList.map(k => `<div class="row" style="padding:.3rem 0"><span class="grow">${esc(k)}</span><button class="btn ghost sm" data-act="unhide" data-title="${esc(k)}">${t('show')}</button></div>`).join('')}</div>` : ''}
+  <div class="card"><h3>${t('sData')}</h3><div class="row wrap">
+    ${ui.deferredInstall ? `<button class="btn" data-act="installApp">${t('install')}</button>` : ''}
+    <button class="btn ghost" data-act="exportData">${t('exportData')}</button>
+    <label class="btn ghost" style="cursor:pointer">${t('importData')}<input type="file" accept=".json,application/json" data-change="importData" hidden></label>
+    <button class="btn danger" data-act="resetAll">${t('resetAll')}</button></div>
+    <p class="muted small">${t('iosTip')}</p></div>`;
+}
+
+/* ---- shell ---- */
+function header() {
+  const tabs = [['schedule', 'cal'], ['grades', 'star'], ['tasks', 'tasks'], ['settings', 'gear']];
+  const ago = state.lastSync ? new Date(state.lastSync).toLocaleTimeString(loc(), {hour:'numeric', minute:'2-digit', hour12:S().hour12}) : t('never');
+  return `<div class="top"><header><div class="bar"><div class="logo-wrap"><h1 class="logo">${LOGO}<b>${t('appName')}</b></h1>
+    <div class="muted small" id="status">${statusText(ago)}</div></div>
+    <button class="icon-btn ${ui.syncing ? 'spin' : ''}" id="syncbtn" data-act="syncManual" aria-label="${t('syncNow')}">${icon('refresh')}</button></div></header>
+    <nav>${tabs.map(x => `<button class="${ui.tab === x[0] ? 'on' : ''}" data-act="tab" data-tab="${x[0]}">${icon(x[1])}<span>${t('tab_' + x[0])}</span></button>`).join('')}</nav></div>`;
+}
+function statusText(ago) {
+  if (ui.syncing) return '…';
+  if (!S().icsUrl) return state.demo ? 'Demo' : '';
+  return `${t('lastSync')}: ${ago}${ui.syncError ? ' !' : ''}`;
+}
+function renderStatus() {
+  const el = $('#status'); if (el) el.textContent = statusText(state.lastSync ? new Date(state.lastSync).toLocaleTimeString(loc(), {hour:'numeric', minute:'2-digit', hour12:S().hour12}) : t('never'));
+  const b = $('#syncbtn'); if (b) b.classList.toggle('spin', ui.syncing);
+}
+function render() {
+  const s = S(), root = document.documentElement;
+  root.lang = s.lang; root.dir = isAr() ? 'rtl' : 'ltr'; root.dataset.theme = s.theme;
+  document.body.dataset.card = s.cardStyle; document.body.dataset.density = s.density; document.body.dataset.size = s.fontSize;
+  const tc = document.querySelector('meta[name=theme-color]'); if (tc) tc.content = isDark() ? '#050505' : '#ffffff';
+  const y = window.scrollY;
+  const body = ui.tab === 'schedule' ? viewSchedule() : ui.tab === 'grades' ? viewGrades() : ui.tab === 'tasks' ? viewTasks() : viewSettings();
+  $('#app').innerHTML = header() + '<main>' + body + '</main>';
+  window.scrollTo(0, y);
+}
+
+/* ---- event sheet ---- */
+let sheetEv = null;
+function openEv(id) {
+  const e = EVMAP[id]; if (!e) return; sheetEv = id;
+  const c = courseOf(e.title), el = $('#sheet');
+  const remVal = c.remind == null ? '' : c.remind === 'off' ? 'off' : String(c.remind);
+  el.innerHTML = `<div class="sheet" style="--c:${colorOf(e.title)}">
+    <div class="sheet-head"><h3>${esc(e.title)} ${e.cancelled ? `<span class="badge">${t('cancelled')}</span>` : ''}</h3><button class="icon-btn" data-act="closeSheet">${icon('x')}</button></div>
+    <p class="muted">${fmtDay(e.start)} · ${e.allDay ? '' : fmtTime(e.start) + ' – ' + fmtTime(e.end)}</p>
+    ${e.location ? `<p>◆ ${esc(e.location)}</p>` : ''}
+    ${e.description ? `<div class="desc">${esc(stripHtml(e.description)).slice(0, 500)}</div>` : ''}
+    <div class="row wrap" style="margin:.8rem 0">
+      <button class="chip ${c.pinned ? 'on' : ''}" data-act="pinCourse" data-title="${esc(e.title)}">${icon('pin', 's')} ${c.pinned ? t('unpin') : t('pin')}</button>
+      <button class="chip ${state.flags[id] ? 'on' : ''}" data-act="flagEv" data-id="${esc(id)}">${icon('flag', 's')} ${state.flags[id] ? t('unflag') : t('flag')}</button>
+      <button class="chip" data-act="hideCourse" data-title="${esc(e.title)}">${t('hide')}</button></div>
+    <label class="f">${t('color')}</label>
+    <div class="row wrap">${PALETTE.map(col => `<button class="sw ${rawColorOf(e.title) === col ? 'on' : ''}" style="background:${adaptColor(col)}" data-act="setColor" data-title="${esc(e.title)}" data-color="${col}" aria-label="${col}"></button>`).join('')}
+      <input type="color" value="${rawColorOf(e.title)}" data-change="customColor" data-title="${esc(e.title)}" style="width:34px;height:34px;border:0;background:none;padding:0"></div>
+    <label class="f">${t('remind')}</label>
+    <select data-change="courseRemind" data-title="${esc(e.title)}"><option value="" ${remVal === '' ? 'selected' : ''}>${t('remindDefault')}</option><option value="off" ${remVal === 'off' ? 'selected' : ''}>${t('remindOff')}</option>
+      ${[0, 5, 10, 15, 30, 60].map(m => `<option value="${m}" ${remVal === String(m) ? 'selected' : ''}>${m === 0 ? t('atStart') : m + ' ' + t('minBefore')}</option>`).join('')}</select>
+    <label class="f">${t('noteLabel')}</label>
+    <textarea rows="3" data-change="courseNote" data-title="${esc(e.title)}">${esc(c.note || '')}</textarea></div>`;
+  el.classList.add('open');
+}
+function closeSheet() { $('#sheet').classList.remove('open'); sheetEv = null; render(); }
+function setCourse(title, patch) { state.courses[title] = {...courseOf(title), ...patch}; save(); }
+
+/* =====================  Actions  ===================== */
+const A = {
+  tab: el => { ui.tab = el.dataset.tab; render(); window.scrollTo(0, 0); },
+  view: el => { S().viewMode = el.dataset.v; save(); render(); },
+  goToday: () => { ui.day = sod(Date.now()); render(); },
+  prev: () => { ui.day = addDays(ui.day, S().viewMode === 'week' ? -7 : -1); render(); },
+  nextp: () => { ui.day = addDays(ui.day, S().viewMode === 'week' ? 7 : 1); render(); },
+  pickDay: el => { ui.day = +el.dataset.d; render(); },
+  openEv: el => openEv(el.dataset.id),
+  closeSheet: () => closeSheet(),
+  pinCourse: el => { const c = courseOf(el.dataset.title); setCourse(el.dataset.title, {pinned: !c.pinned}); openEv(sheetEv); },
+  flagEv: el => { const id = el.dataset.id; if (state.flags[id]) delete state.flags[id]; else state.flags[id] = 1; save(); openEv(sheetEv); },
+  hideCourse: el => { setCourse(el.dataset.title, {hidden:true}); closeSheet(); },
+  unhide: el => { setCourse(el.dataset.title, {hidden:false}); render(); },
+  setColor: el => { setCourse(el.dataset.title, {color: el.dataset.color}); openEv(sheetEv); },
+  dismissChanges: () => { state.lastChanges = []; save(); render(); },
+  loadUrl: () => { const v = ($('#w-url').value || '').trim(); if (!v) return; S().icsUrl = v; state.demo = false; save(); sync(true); },
+  demo: () => { state.demo = true; S().icsUrl = ''; sync(); },
+  syncManual: () => { if (state.demo && S().icsUrl) state.demo = false; if (!S().icsUrl && !state.demo) return toast(t('icsUrl')); sync(true); },
+  clearSource: () => { state.icsText = ''; state.demo = false; S().icsUrl = ''; state.snapshot = null; state.lastChanges = []; ui.syncError = ''; EV = []; EVMAP = {}; save(); render(); },
+  setVal: el => {
+    let v = el.dataset.val; if (/^-?\d+$/.test(v)) v = +v;
+    S()[el.dataset.key] = v; save(); render();
+    if (el.dataset.key === 'autoMin') schedule();
+  },
+  toggleRemind: el => {
+    const m = +el.dataset.m, r = S().reminders, i = r.indexOf(m);
+    if (i >= 0) r.splice(i, 1); else r.push(m);
+    save(); render();
+  },
+  hideNotifCard: () => { state.hideNotifCard = true; save(); render(); },
+  askNotif: async () => {
+    const p = await Notification.requestPermission();
+    if (p === 'granted' && ui.pushKey) await enablePush();
+    render();
+  },
+  pushOn: async () => {
+    if (!('Notification' in window)) return toast(t('notifUnsupported'));
+    if (Notification.permission !== 'granted') { const p = await Notification.requestPermission(); if (p !== 'granted') return render(); }
+    await enablePush(); render();
+  },
+  pushOff: () => disablePush(),
+  pushTest: async () => {
+    try {
+      const reg = await navigator.serviceWorker.ready, sub = await reg.pushManager.getSubscription();
+      if (!sub) return;
+      await pushSync(true);
+      const r = await fetch('/api/test', {method:'POST', headers:JSONH, body:JSON.stringify({endpoint:sub.endpoint})});
+      toast(r.ok ? t('pushTestSent') : t('pushFail'));
+    } catch (e) { toast(t('pushFail')); }
+  },
+  testNotif: () => notify(t('appName'), t('testBody'), 'test'),
+  addCourse: () => { const id = uid(); state.grades.push({id, name:'', credits:3, target:90, letter:'', components:[]}); ui.openCourse[id] = true; save(); render(); },
+  importCourses: () => {
+    const have = new Set(state.grades.map(g => g.name.trim().toLowerCase()));
+    [...new Set(EV.map(e => e.title))].forEach(n => {
+      if (!have.has(n.trim().toLowerCase())) state.grades.push({id:uid(), name:n, credits:3, target:90, letter:'', components:[]});
+    });
+    save(); render();
+  },
+  toggleCourse: el => { ui.openCourse[el.dataset.id] = !ui.openCourse[el.dataset.id]; render(); },
+  addComp: el => { const g = state.grades.find(x => x.id === el.dataset.id); g.components.push({id:uid(), name:'', weight:'', score:'', max:100}); save(); render(); },
+  delComp: el => { const g = state.grades.find(x => x.id === el.dataset.id); g.components = g.components.filter(c => c.id !== el.dataset.cid); save(); render(); },
+  delCourse: el => { state.grades = state.grades.filter(x => x.id !== el.dataset.id); save(); render(); },
+  resetScale: () => { state.scale = DEFAULT_SCALE.map(x => ({...x})); save(); render(); },
+  addTask: () => {
+    const title = $('#tk-title').value.trim(); if (!title) return;
+    const due = $('#tk-due').value ? new Date($('#tk-due').value).getTime() : null;
+    state.tasks.push({id:uid(), title, due, course:$('#tk-course').value.trim(), done:false});
+    save(); render();
+  },
+  delTask: el => { state.tasks = state.tasks.filter(x => x.id !== el.dataset.id); save(); render(); },
+  installApp: () => { const p = ui.deferredInstall; if (!p) return; p.prompt(); ui.deferredInstall = null; render(); },
+  exportData: () => {
+    const blob = new Blob([JSON.stringify(state, null, 1)], {type:'application/json'});
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'my-schedule-backup.json'; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  },
+  resetAll: () => { if (confirm(t('confirmReset'))) { localStorage.removeItem(KEY); state = DEFAULTS(); EV = []; EVMAP = {}; render(); } }
+};
+const C = {
+  set: el => {
+    const k = el.dataset.key; S()[k] = el.dataset.bool ? el.checked : el.value.trim();
+    save();
+    if (k === 'icsUrl' && S().icsUrl) { state.demo = false; }
+    render();
+  },
+  uploadIcs: el => {
+    const f = el.files[0]; if (!f) return;
+    f.text().then(tx => {
+      if (!/BEGIN:VCALENDAR/i.test(tx)) return toast(t('badFile'));
+      state.icsText = tx; state.demo = false; S().icsUrl = ''; ui.syncError = ''; loadEvents();
+      state.snapshot = makeSnapshot(); state.lastSync = Date.now(); save(); ui.tab = 'schedule'; render();
+    });
+  },
+  customColor: el => { setCourse(el.dataset.title, {color: el.value}); openEv(sheetEv); },
+  courseRemind: el => { const v = el.value; setCourse(el.dataset.title, {remind: v === '' ? null : v === 'off' ? 'off' : +v}); },
+  courseNote: el => { setCourse(el.dataset.title, {note: el.value.trim()}); },
+  gpaPrev: el => { state.gpaPrev[el.dataset.k] = el.value; save(); render(); },
+  gField: el => {
+    const g = state.grades.find(x => x.id === el.dataset.id); if (!g) return;
+    g[el.dataset.k] = el.value; save(); render();
+  },
+  cField: el => {
+    const g = state.grades.find(x => x.id === el.dataset.id); if (!g) return;
+    const c = g.components.find(x => x.id === el.dataset.cid); if (!c) return;
+    c[el.dataset.k] = el.value; save(); render();
+  },
+  scaleF: el => {
+    const x = state.scale[+el.dataset.i], k = el.dataset.k;
+    x[k] = k === 'letter' ? el.value.trim() : +el.value; save(); render();
+  },
+  taskDone: el => { const k = state.tasks.find(x => x.id === el.dataset.id); if (k) { k.done = el.checked; save(); render(); } },
+  importData: el => {
+    const f = el.files[0]; if (!f) return;
+    f.text().then(tx => {
+      try { const o = JSON.parse(tx), d = DEFAULTS(); state = {...d, ...o, settings:{...d.settings, ...(o.settings || {})}}; save(); loadEvents(); render(); toast(t('imported')); }
+      catch (e) { toast(t('badFile')); }
+    });
+  }
+};
+document.addEventListener('click', ev => {
+  const sh = $('#sheet');
+  if (ev.target === sh) return closeSheet();
+  const el = ev.target.closest('[data-act]');
+  if (el && A[el.dataset.act]) A[el.dataset.act](el, ev);
+});
+document.addEventListener('change', ev => {
+  const el = ev.target.closest('[data-change]');
+  if (el && C[el.dataset.change]) C[el.dataset.change](el, ev);
+});
+
+/* =====================  Timers / PWA  ===================== */
+let syncTimer = null;
+function schedule() {
+  clearInterval(syncTimer);
+  const m = +S().autoMin;
+  if (m > 0) syncTimer = setInterval(() => { if (document.visibilityState === 'visible') sync(); }, m * 60000);
+}
+setInterval(() => {
+  const b = $('#banner'); if (b && ui.tab === 'schedule') b.innerHTML = bannerHTML();
+  checkReminders();
+}, 20000);
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState !== 'visible') return;
+  if (S().icsUrl && Date.now() - state.lastSync > 10 * 60000) sync();
+  checkReminders(); render();
+});
+try { matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { if (S().theme === 'auto') render(); }); } catch (e) {}
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); ui.deferredInstall = e; if (ui.tab === 'settings') render(); });
+if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+}
+
+/* =====================  Boot  ===================== */
+try {
+  if (/^https?:$/.test(location.protocol)) {
+    const pageUrl = location.origin + location.pathname.replace(/index\.html$/, '');
+    const l = document.createElement('link'); l.rel = 'canonical'; l.href = pageUrl; document.head.appendChild(l);
+    const m = document.createElement('meta'); m.setAttribute('property', 'og:url'); m.content = pageUrl; document.head.appendChild(m);
+  }
+} catch (e) {}
+loadEvents();
+render();
+if (state.demo) { state.icsText = demoICS(); loadEvents(); render(); }
+schedule();
+if (S().icsUrl) sync();
+checkReminders();
+if (/^https?:$/.test(location.protocol)) {
+  fetch('/api/vapid').then(r => r.ok ? r.json() : null).then(j => {
+    if (!j || !j.key) return;
+    ui.pushKey = j.key;
+    if (state.push && state.push.on && 'Notification' in window && Notification.permission === 'granted') pushSync(true);
+    if (ui.tab === 'settings' || ui.tab === 'schedule') render();
+  }).catch(() => {});
+}
+window.__app = { get state() { return state; }, get EV() { return EV; }, render, A, ui };
+})();
+</script>
+</body>
+</html>

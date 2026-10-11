@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# غيّر الرابط بعد النشر / Replace after deploying:
+Sitemap: https://YOUR-SITE.example/sitemap.xml
