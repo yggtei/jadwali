@@ -2,10 +2,10 @@
  * نقطة الدخول: يخدم الموقع (الملفات في public/) ويضيف:
  *   GET  /proxy?url=...     يجلب رابط ICS من Outlook (لأن Outlook يمنع المتصفح من قراءته مباشرة)
  *   GET  /api/vapid         المفتاح العام للإشعارات
- *   POST /api/sync           تسجيل الجهاز وإعدادات التنبيه
- *   POST /api/pending        الـ Service Worker يطلب نص الإشعار عند وصول push
- *   POST /api/test           إشعار تجريبي بعد 20 ثانية
- *   POST /api/unsubscribe    إيقاف التنبيهات
+ *   POST /api/sync          تسجيل الجهاز وإعدادات التنبيه
+ *   POST /api/pending       الـ Service Worker يطلب نص الإشعار عند وصول push
+ *   POST /api/test          إشعار تجريبي بعد 20 ثانية
+ *   POST /api/unsubscribe   إيقاف التنبيهات
  */
 import { ICS_HOSTS, PUSH_HOSTS, hostOk, json, sha256hex } from './shared.mjs';
 export { Subscriber, KeyStore } from './durable.mjs';
