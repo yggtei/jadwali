@@ -17,6 +17,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="جدولي | جدول الجامعة من Outlook مع تنبيهات وحاسبة المعدل · My Schedule">
 <meta name="twitter:description" content="جدولي: موقع مجاني يحوّل جدول Outlook الجامعي إلى جدول مرتب وسهل، مع تنبيهات قبل المحاضرة، تتبع الدرجات، حاسبة المعدل التراكمي (GPA)، وقائمة مهام. يعمل على الجوال والكمبيوتر.">
+<!-- بعد تسجيل الموقع في Google Search Console انسخ كود التحقق هنا وأزل علامات التعليق:
+<meta name="google-site-verification" content="PASTE_CODE_HERE">
+-->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"جدولي","alternateName":["My Schedule","Jadwali"],"applicationCategory":"EducationalApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","inLanguage":["ar","en"],"description":"Free university timetable app: turn your Outlook calendar into a clean schedule with lecture reminders, grade tracking, a GPA calculator and tasks. Works on phone and desktop.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#ffffff">
@@ -33,35 +36,36 @@
   --bg:#ffffff;--card:#ffffff;--text:#0a0a0a;--muted:#5c5c5c;--line:#d2d2d2;--edge:#0a0a0a;
   --ink:#0a0a0a;--on-ink:#ffffff;--accent:#0a0a0a;--accent-soft:#f0f0f0;--danger:#0a0a0a;--ok:#0a0a0a;
   --shadow:0 1px 0 rgba(0,0,0,.05),0 10px 22px -10px rgba(0,0,0,.30);
-  --hard:5px 5px 0 rgba(0,0,0,.20);--pat-op:.12;--r:12px;
+  --hard:5px 5px 0 rgba(0,0,0,.20);--pat-op:.13;--r:12px;
 }
 :root[data-theme=dark]{
   color-scheme:dark;
-  --bg:#000000;--card:#0a0a0a;--text:#ffffff;--muted:#a3a3a3;--line:#2e2e2e;--edge:#ffffff;
-  --ink:#ffffff;--on-ink:#000000;--accent:#ffffff;--accent-soft:#1c1c1c;--danger:#ffffff;--ok:#ffffff;
+  --bg:#050505;--card:#101010;--text:#f4f4f4;--muted:#a3a3a3;--line:#2e2e2e;--edge:#8f8f8f;
+  --ink:#f4f4f4;--on-ink:#050505;--accent:#f4f4f4;--accent-soft:#1c1c1c;--danger:#f4f4f4;--ok:#f4f4f4;
   --shadow:0 1px 0 rgba(255,255,255,.04),0 12px 26px -10px rgba(0,0,0,.95);
-  --hard:5px 5px 0 rgba(255,255,255,.2);--pat-op:.15;
+  --hard:5px 5px 0 rgba(255,255,255,.16);--pat-op:.15;
 }
 @media (prefers-color-scheme:dark){
   :root[data-theme=auto]{
     color-scheme:dark;
-    --bg:#000000;--card:#0a0a0a;--text:#ffffff;--muted:#a3a3a3;--line:#2e2e2e;--edge:#ffffff;
-    --ink:#ffffff;--on-ink:#000000;--accent:#ffffff;--accent-soft:#1c1c1c;--danger:#ffffff;--ok:#ffffff;
+    --bg:#050505;--card:#101010;--text:#f4f4f4;--muted:#a3a3a3;--line:#2e2e2e;--edge:#8f8f8f;
+    --ink:#f4f4f4;--on-ink:#050505;--accent:#f4f4f4;--accent-soft:#1c1c1c;--danger:#f4f4f4;--ok:#f4f4f4;
     --shadow:0 1px 0 rgba(255,255,255,.04),0 12px 26px -10px rgba(0,0,0,.95);
-    --hard:5px 5px 0 rgba(255,255,255,.2);--pat-op:.15;
+    --hard:5px 5px 0 rgba(255,255,255,.16);--pat-op:.15;
   }
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0}
 body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,"Noto Sans Arabic",Arial,sans-serif;font-size:16px;line-height:1.5;min-height:100vh;position:relative}
 
-/* أزرار سوني + أشكال أشكال ذهبية خفيفة */
+/* ---------- خلفية: أشكال هندسية كثيرة ومتكررة (طبقتان بمقاسين مختلفين) ---------- */
 body::before{
   content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:var(--ink);opacity:var(--pat-op);
-  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M25 10 L40 36 L10 36 Z'/%3E%3Ccircle cx='105' cy='23' r='12'/%3E%3Crect x='15' y='85' width='22' height='22' transform='rotate%2845 26 96%29'/%3E%3Cpath d='M95 85 L117 107 M117 85 L95 107'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220' fill='none' stroke='%23d4af37' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M180 180 L200 180 L190 198 Z' fill='%23d4af37' fill-opacity='0.25'/%3E%3Ccircle cx='40' cy='180' r='6' stroke='%23d4af37' stroke-width='1.5'/%3E%3C/svg%3E");
-  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M25 10 L40 36 L10 36 Z'/%3E%3Ccircle cx='105' cy='23' r='12'/%3E%3Crect x='15' y='85' width='22' height='22' transform='rotate%2845 26 96%29'/%3E%3Cpath d='M95 85 L117 107 M117 85 L95 107'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220' fill='none' stroke='%23d4af37' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M180 180 L200 180 L190 198 Z' fill='%23d4af37' fill-opacity='0.25'/%3E%3Ccircle cx='40' cy='180' r='6' stroke='%23d4af37' stroke-width='1.5'/%3E%3C/svg%3E");
-  -webkit-mask-size:140px 140px,220px 220px;mask-size:140px 140px,220px 220px;
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='20' cy='20' r='9'/%3E%3Cpath d='M70 10 L88 42 L52 42 Z'/%3E%3Crect x='92' y='12' width='20' height='20' transform='rotate%2845 102 22%29'/%3E%3Cpath d='M20 70 v22 M9 81 h22'/%3E%3Ccircle cx='66' cy='78' r='5' fill='black'/%3E%3Cpath d='M92 76 L102 70 L112 76 L112 88 L102 94 L92 88 Z'/%3E%3Cpath d='M6 106 q8 -12 16 0 t16 0'/%3E%3Crect x='60' y='100' width='28' height='14'/%3E%3Cpath d='M98 112 a10 10 0 0 1 20 0 Z'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190' viewBox='0 0 190 190' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='40' cy='40' r='22'/%3E%3Ccircle cx='40' cy='40' r='11'/%3E%3Cpath d='M120 20 L160 20 L140 56 Z'/%3E%3Crect x='20' y='110' width='30' height='30'/%3E%3Cpath d='M92 98 l26 26 -26 26 -26 -26 Z'/%3E%3Cpath d='M152 108 v34 M135 125 h34'/%3E%3Ccircle cx='150' cy='172' r='2.5' fill='black'/%3E%3Ccircle cx='162' cy='172' r='2.5' fill='black'/%3E%3Ccircle cx='174' cy='172' r='2.5' fill='black'/%3E%3Cpath d='M20 162 h40 M20 170 h40 M20 178 h40'/%3E%3Cpath d='M104 176 a14 14 0 0 1 28 0'/%3E%3Cpath d='M70 70 l8 8 8 -8 8 8 8 -8'/%3E%3Ccircle cx='170' cy='60' r='7' fill='black'/%3E%3C/svg%3E");
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='20' cy='20' r='9'/%3E%3Cpath d='M70 10 L88 42 L52 42 Z'/%3E%3Crect x='92' y='12' width='20' height='20' transform='rotate%2845 102 22%29'/%3E%3Cpath d='M20 70 v22 M9 81 h22'/%3E%3Ccircle cx='66' cy='78' r='5' fill='black'/%3E%3Cpath d='M92 76 L102 70 L112 76 L112 88 L102 94 L92 88 Z'/%3E%3Cpath d='M6 106 q8 -12 16 0 t16 0'/%3E%3Crect x='60' y='100' width='28' height='14'/%3E%3Cpath d='M98 112 a10 10 0 0 1 20 0 Z'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190' viewBox='0 0 190 190' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='40' cy='40' r='22'/%3E%3Ccircle cx='40' cy='40' r='11'/%3E%3Cpath d='M120 20 L160 20 L140 56 Z'/%3E%3Crect x='20' y='110' width='30' height='30'/%3E%3Cpath d='M92 98 l26 26 -26 26 -26 -26 Z'/%3E%3Cpath d='M152 108 v34 M135 125 h34'/%3E%3Ccircle cx='150' cy='172' r='2.5' fill='black'/%3E%3Ccircle cx='162' cy='172' r='2.5' fill='black'/%3E%3Ccircle cx='174' cy='172' r='2.5' fill='black'/%3E%3Cpath d='M20 162 h40 M20 170 h40 M20 178 h40'/%3E%3Cpath d='M104 176 a14 14 0 0 1 28 0'/%3E%3Cpath d='M70 70 l8 8 8 -8 8 8 8 -8'/%3E%3Ccircle cx='170' cy='60' r='7' fill='black'/%3E%3C/svg%3E");
+  -webkit-mask-size:120px 120px,190px 190px;mask-size:120px 120px,190px 190px;
+  -webkit-mask-position:0 0,47px 63px;mask-position:0 0,47px 63px;
   -webkit-mask-repeat:repeat,repeat;mask-repeat:repeat,repeat;
 }
 
@@ -71,7 +75,6 @@ h1,h2,h3{margin:0}
 h2{font-size:1.2rem;margin:.4rem 0 1rem;text-align:center;letter-spacing:.2px}
 .muted{color:var(--muted)}
 .small{font-size:.85rem}
-.sub-desc{font-size:.78rem;color:var(--muted);margin-top:.2rem;display:block;line-height:1.35}
 .wrap{flex-wrap:wrap}
 .row{display:flex;align-items:center;gap:.5rem}
 .grow{flex:1;min-width:0}
@@ -80,6 +83,7 @@ h2{font-size:1.2rem;margin:.4rem 0 1rem;text-align:center;letter-spacing:.2px}
 svg.i{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
 svg.i.s{width:16px;height:16px}
 
+/* ---------- الرأس والتنقل (موسَّط) ---------- */
 .top{position:sticky;top:0;z-index:20;padding-top:env(safe-area-inset-top);background:color-mix(in srgb,var(--bg) 94%,transparent);border-bottom:1px solid var(--edge)}
 .bar{max-width:800px;margin:0 auto;position:relative;display:flex;justify-content:center;align-items:center;padding:.65rem 3.4rem .45rem}
 .logo-wrap{text-align:center}
@@ -105,6 +109,7 @@ nav button.on{background:var(--ink);color:var(--on-ink)}
 }
 main{max-width:800px;margin:0 auto;padding:1.1rem 1rem}
 
+/* ---------- عناصر عامة ---------- */
 .card{background:var(--card);border:1px solid var(--edge);border-radius:var(--r);padding:1rem;box-shadow:var(--shadow);margin-bottom:1rem}
 .chip{border:1px solid var(--edge);background:var(--card);border-radius:999px;padding:.35rem .9rem;font-size:.9rem;display:inline-flex;align-items:center;gap:.35rem;font-weight:600}
 .chip.on{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
@@ -120,6 +125,7 @@ label.f{display:block;font-size:.85rem;color:var(--muted);margin:.75rem 0 .25rem
 .sync-line{display:flex;align-items:center;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem}
 .err{color:var(--text);font-weight:700}
 
+/* ---------- شريط المحاضرة الحالية ---------- */
 .banner{background:var(--ink);color:var(--on-ink);border-radius:var(--r);padding:1.1rem 1.2rem;margin:0 0 1.1rem;box-shadow:var(--hard);text-align:center}
 .banner .l1{font-size:.8rem;opacity:.75;letter-spacing:1px;text-transform:uppercase}
 .banner .l2{font-size:1.25rem;font-weight:800}
@@ -128,6 +134,7 @@ label.f{display:block;font-size:.85rem;color:var(--muted);margin:.75rem 0 .25rem
 .alert{background:var(--card);border:1.5px dashed var(--edge);color:var(--text);border-radius:var(--r);padding:.85rem 1rem;margin-bottom:1rem;box-shadow:var(--shadow)}
 .alert ul{margin:.4rem 0;padding-inline-start:1.2rem}
 
+/* ---------- المثبّتة + أيام الأسبوع ---------- */
 .strip{display:flex;gap:.6rem;overflow-x:auto;padding:.2rem .1rem .6rem;margin-bottom:.6rem;scrollbar-width:none}
 .strip::-webkit-scrollbar{display:none}
 .pin-card{flex:none;min-width:190px;background:var(--card);border:1px solid var(--edge);border-inline-start:6px solid var(--c);border-radius:10px;padding:.6rem .8rem;text-align:start;box-shadow:var(--shadow)}
@@ -142,6 +149,7 @@ label.f{display:block;font-size:.85rem;color:var(--muted);margin:.75rem 0 .25rem
 .dchip.has i{visibility:visible}
 .dchip.on i{background:var(--on-ink)}
 
+/* ---------- المحاضرات ---------- */
 .dayhead{font-weight:800;margin:.9rem 0 .5rem;display:flex;gap:.5rem;align-items:baseline;justify-content:center;text-align:center}
 .dayhead.today{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
 .evs{display:flex;flex-direction:column;gap:.6rem}
@@ -171,19 +179,15 @@ body[data-size=sm]{font-size:14.5px}
 }
 .empty{text-align:center;color:var(--muted);padding:2rem 1rem}
 
-#sheet,#tut-modal{position:fixed;inset:0;z-index:50;display:none;background:rgba(0,0,0,.6);align-items:flex-end;justify-content:center}
-#sheet.open,#tut-modal.open{display:flex}
-.sheet,.tut-card{background:var(--card);color:var(--text);width:100%;max-width:560px;max-height:90vh;overflow:auto;border-radius:18px 18px 0 0;border:1px solid var(--edge);padding:1.1rem 1.1rem calc(1.2rem + env(safe-area-inset-bottom));border-top:8px solid var(--c,var(--ink));box-shadow:var(--hard)}
-@media (min-width:700px){#sheet,#tut-modal{align-items:center}.sheet,.tut-card{border-radius:16px}}
+/* ---------- نافذة تفاصيل المحاضرة ---------- */
+#sheet{position:fixed;inset:0;z-index:50;display:none;background:rgba(0,0,0,.55);align-items:flex-end;justify-content:center}
+#sheet.open{display:flex}
+.sheet{background:var(--card);color:var(--text);width:100%;max-width:560px;max-height:90vh;overflow:auto;border-radius:18px 18px 0 0;border:1px solid var(--edge);padding:1.1rem 1.1rem calc(1.2rem + env(safe-area-inset-bottom));border-top:8px solid var(--c,var(--ink));box-shadow:var(--hard)}
+@media (min-width:700px){#sheet{align-items:center}.sheet{border-radius:16px}}
 .sheet-head{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem;margin-bottom:.4rem}
 .desc{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:.6rem .8rem;font-size:.9rem}
 
-.outlook-sim{background:#f3f3f3;color:#000;border:1px solid #ccc;border-radius:8px;padding:.8rem;margin:.8rem 0;font-size:.82rem}
-:root[data-theme=dark] .outlook-sim{background:#202020;color:#fff;border-color:#444}
-.outlook-sim .sim-header{background:#0078d4;color:#fff;padding:.4rem .6rem;border-radius:4px;display:flex;justify-content:space-between;align-items:center;font-weight:700;margin-bottom:.6rem}
-.outlook-sim .sim-btn{background:#0078d4;color:#fff;border:none;padding:.2rem .6rem;border-radius:4px;font-size:.78rem;font-weight:700;display:inline-block}
-.outlook-sim .sim-focus{outline:2px dashed #d83b01;outline-offset:3px}
-
+/* ---------- المهام والدرجات ---------- */
 .task{display:flex;gap:.7rem;align-items:center;padding:.65rem 0;border-bottom:1px solid var(--line)}
 .task:last-child{border-bottom:0}
 .task input[type=checkbox]{width:22px;height:22px;accent-color:var(--ink)}
@@ -203,15 +207,15 @@ details{margin-top:.6rem}
 ol.steps{padding-inline-start:1.3rem;margin:.4rem 0}
 ol.steps li{margin:.3rem 0}
 code{background:var(--accent-soft);padding:.05rem .35rem;border-radius:6px;font-size:.85em;direction:ltr;unicode-bidi:embed}
+.card h3{margin-bottom:.2rem}
 
+/* ---------- تنبيه سريع ---------- */
 #toast{position:fixed;inset-inline:0;bottom:96px;display:flex;justify-content:center;z-index:60;pointer-events:none}
 #toast div{background:var(--ink);color:var(--on-ink);padding:.65rem 1.05rem;border-radius:10px;max-width:90%;opacity:0;transform:translateY(8px);transition:.25s;box-shadow:var(--hard)}
 #toast.show div{opacity:1;transform:none}
+
 .nc{display:flex;gap:.8rem;align-items:center;justify-content:space-between;flex-wrap:wrap;text-align:start}
-
-.footer-rights{text-align:center;margin:1.8rem 0 0.8rem;padding-top:1rem;border-top:1px dashed var(--line);font-size:.82rem;color:var(--muted);line-height:1.6}
-.footer-rights b{color:var(--text)}
-
+/* ---------- نص بديل لمحركات البحث (يختفي بعد تشغيل التطبيق) ---------- */
 .seo-fallback{max-width:640px;margin:3rem auto;padding:1.2rem;text-align:center}
 </style>
 </head>
@@ -219,27 +223,10 @@ code{background:var(--accent-soft);padding:.05rem .35rem;border-radius:6px;font-
 <div id="app"><main class="seo-fallback">
 <h1>جدولي — جدولك الجامعي من Outlook مرتب وبتنبيهات</h1>
 <p>جدولي: موقع مجاني يحوّل جدول Outlook الجامعي إلى جدول مرتب وسهل، مع تنبيهات قبل المحاضرة، تتبع الدرجات، حاسبة المعدل التراكمي (GPA)، وقائمة مهام. يعمل على الجوال والكمبيوتر.</p>
-<noscript><p>يحتاج الموقع إلى تفعيل JavaScript.</p></noscript>
+<p lang="en" dir="ltr">Free university timetable app: turn your Outlook calendar into a clean schedule with lecture reminders, grade tracking, a GPA calculator and tasks. Works on phone and desktop.</p>
+<noscript><p>يحتاج الموقع إلى تفعيل JavaScript. / Please enable JavaScript.</p></noscript>
 </main></div>
-
 <div id="sheet"></div>
-
-<!-- نافذة الشرح المصورة للتوجيه -->
-<div id="tut-modal">
-  <div class="tut-card" style="--c:var(--ink)">
-    <div class="sheet-head">
-      <h3>كيف تحصل على رابط ICS من Outlook؟</h3>
-      <button class="icon-btn" data-act="closeTut"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-    </div>
-    <div id="tut-step-content"></div>
-    <div class="row" style="justify-content:space-between;margin-top:1.2rem">
-      <button class="btn ghost sm" id="tut-prev" data-act="tutPrev">السابق</button>
-      <span class="small muted" id="tut-num">1 من 4</span>
-      <button class="btn sm" id="tut-next" data-act="tutNext">التالي</button>
-    </div>
-  </div>
-</div>
-
 <div id="toast"><div></div></div>
 
 <script src="ics.js"></script>
@@ -248,6 +235,7 @@ code{background:var(--accent-soft);padding:.05rem .35rem;border-radius:6px;font-
 (function () {
 'use strict';
 
+/* =====================  Strings / النصوص  ===================== */
 const D = {
   appName: ['جدولي', 'My Schedule'],
   tab_schedule: ['الجدول', 'Schedule'], tab_grades: ['الدرجات', 'Grades'],
@@ -265,12 +253,21 @@ const D = {
   ch_added: ['محاضرة جديدة', 'New'], ch_removed: ['حُذفت', 'Removed'], ch_cancelled: ['أُلغيت', 'Cancelled'],
   ch_moved: ['تغيّر الموعد', 'Rescheduled'], ch_room: ['تغيّرت القاعة', 'Room changed'], ch_title: ['تغيّر الاسم', 'Renamed'],
   min: ['د', 'm'], hr: ['س', 'h'], dayShort: ['ي', 'd'],
+  /* welcome */
   welcomeTitle: ['أهلاً! خلنا نجيب جدولك', "Welcome! Let's load your schedule"],
   welcomeText: ['الصق رابط التقويم (ICS) من Outlook، وبيتحدّث الجدول عندك تلقائياً كل ما تغيّر.', 'Paste your Outlook calendar (ICS) link and it will update automatically whenever it changes.'],
   icsUrl: ['رابط التقويم (ICS)', 'Calendar link (ICS)'], icsPlaceholder: ['https://outlook.office365.com/owa/calendar/…/calendar.ics', 'https://outlook.office365.com/owa/calendar/…/calendar.ics'],
   load: ['تحميل الجدول', 'Load schedule'], uploadIcs: ['أو ارفع ملف ICS', 'Or upload an ICS file'],
   tryDemo: ['جرّب بجدول تجريبي', 'Try a demo schedule'],
-  btnHowTo: ['كيف أحصل على الرابط؟ (بالخطوات)', 'How to get the ICS link?'],
+  howTitle: ['وش هو ICS وكيف أحصل على الرابط؟', 'What is ICS and how do I get the link?'],
+  howWhat: ['ICS صيغة قياسية لملفات التقويم. رابط ICS من Outlook يعطي أي برنامج نسخة محدّثة من جدولك، والتطبيق يقرأه ويرتّبه لك.', 'ICS is the standard calendar format. An Outlook ICS link lets any app read an always-up-to-date copy of your schedule.'],
+  howSteps: [
+    ['افتح Outlook على الويب بحساب الجامعة (outlook.office.com).', 'Open Outlook on the web with your university account (outlook.office.com).'],
+    ['اضغط الإعدادات ← التقويم ← التقويمات المشتركة.', 'Click Settings → Calendar → Shared calendars.'],
+    ['تحت «نشر تقويم» اختر تقويم الجدول، والصلاحية «يمكنه عرض كل التفاصيل»، ثم «نشر».', 'Under “Publish a calendar” choose your schedule calendar, set “Can view all details”, then Publish.'],
+    ['انسخ رابط الـ ICS (ليس رابط HTML) والصقه هنا.', 'Copy the ICS link (not the HTML one) and paste it here.']
+  ],
+  howNote: ['إذا خيار النشر غير موجود، فالجامعة مقفلته. وقتها من Outlook على الكمبيوتر: ملف ← حفظ التقويم، وارفع ملف .ics هنا.', 'If the publish option is missing, your university disabled it. In desktop Outlook use File → Save Calendar and upload the .ics file here.'],
   notifCardTitle: ['فعّل التنبيهات', 'Turn on reminders'],
   notifCardText: ['يوصلك تنبيه قبل كل محاضرة بالوقت اللي تختاره.', 'Get a reminder before every lecture.'],
   iosInstallTitle: ['أضف التطبيق للشاشة الرئيسية', 'Add the app to your Home Screen'],
@@ -283,13 +280,15 @@ const D = {
   pushTestSent: ['راح يوصلك تنبيه بعد 20 ثانية. اقفل التطبيق وانتظر.', 'You will get an alert in 20 seconds. Close the app and wait.'],
   pushFail: ['تعذّر تفعيل التنبيهات', 'Could not turn on alerts'],
   pushIcsErr: ['الخادم ما قدر يقرأ رابط الجدول. تأكد أنه رابط ICS من Outlook.', 'The server could not read the schedule link. Make sure it is an Outlook ICS link.'],
-  pushNoServer: ['التنبيهات بعد قفل التطبيق تحتاج نشر الموقع مع الخادم.', 'Alerts after the app is closed need the site deployed with the server.'],
+  pushNoServer: ['التنبيهات بعد قفل التطبيق تحتاج نشر الموقع مع الخادم (شوف README).', 'Alerts after the app is closed need the site deployed with the server (see README).'],
+  /* sheet */
   pin: ['تثبيت المادة', 'Pin course'], unpin: ['إلغاء التثبيت', 'Unpin'],
   flag: ['علامة', 'Flag'], unflag: ['إزالة العلامة', 'Unflag'],
   hide: ['إخفاء المادة', 'Hide course'], color: ['اللون', 'Color'], remind: ['التنبيه', 'Reminder'],
   remindDefault: ['الافتراضي', 'Default'], remindOff: ['بدون تنبيه', 'No reminder'],
   noteLabel: ['ملاحظاتي على المادة', 'My notes for this course'],
   minBefore: ['دقائق قبل', 'min before'], atStart: ['وقت البداية', 'At start'],
+  /* grades */
   gradesTitle: ['المواد والدرجات', 'Courses & grades'], addCourse: ['إضافة مادة', 'Add course'],
   importCourses: ['استيراد المواد من الجدول', 'Import courses from schedule'],
   courseName: ['اسم المادة', 'Course name'], credits: ['الساعات', 'Credits'],
@@ -305,9 +304,11 @@ const D = {
   scaleTitle: ['سلم الدرجات (عدّله حسب جامعتك)', 'Grading scale (edit for your university)'],
   minPct: ['من %', 'Min %'], points: ['النقاط', 'Points'], resetScale: ['إعادة الافتراضي', 'Reset default'],
   noCourses: ['ما أضفت مواد بعد.', 'No courses yet.'],
+  /* tasks */
   tasksTitle: ['المهام والمواعيد', 'Tasks & deadlines'], taskTitle: ['المهمة (تسليم، اختبار…)', 'Task (assignment, exam…)'],
   due: ['الموعد', 'Due'], course: ['المادة', 'Course'], add: ['إضافة', 'Add'], noTasks: ['لا توجد مهام', 'No tasks'],
   doneTasks: ['المنجزة', 'Completed'],
+  /* settings */
   sSource: ['مصدر الجدول', 'Schedule source'], proxy: ['رابط البروكسي (اختياري)', 'Proxy URL (optional)'],
   proxyHint: ['اتركه فارغاً. الموقع يستخدم بروكسي مدمج تلقائياً.', 'Leave empty. The site uses its built-in proxy automatically.'],
   saveLoad: ['حفظ وتحديث', 'Save & refresh'], autoRefresh: ['التحديث التلقائي كل', 'Auto-refresh every'],
@@ -317,10 +318,10 @@ const D = {
   notifOn: ['الإشعارات مفعّلة ✓', 'Notifications enabled ✓'], notifBlocked: ['الإشعارات محظورة من إعدادات المتصفح', 'Notifications are blocked in browser settings'],
   notifUnsupported: ['المتصفح لا يدعم الإشعارات (في الآيفون: أضف الموقع للشاشة الرئيسية أولاً)', 'Notifications unsupported (on iPhone: add the site to the Home Screen first)'],
   remindBefore: ['نبّهني قبل المحاضرة بـ', 'Remind me before lectures'], taskRemind: ['نبّهني قبل موعد المهمة بـ', 'Remind me before tasks'],
-  sound: ['صوت منبّه التطبيق', 'In-app alarm sound'], testNotif: ['تجربة تنبيه', 'Test alert'],
+  sound: ['صوت منبّه داخل التطبيق', 'In-app alarm sound'], testNotif: ['تجربة تنبيه', 'Test alert'],
   notifNote: ['مع «تنبيهات الخلفية» تصلك التنبيهات من الخادم حتى لو التطبيق مقفل. بدونها تشتغل فقط والتطبيق مفتوح.', 'With “background alerts” reminders come from the server even when the app is closed. Without them they only work while the app is open.'],
-  sLook: ['الشكل والمظهر', 'Appearance'], language: ['اللغة', 'Language'], theme: ['المظهر', 'Theme'],
-  themeAuto: ['تلقائي', 'Auto'], themeLight: ['فاتح (أسود على أبيض)', 'Light'], themeDark: ['داكن (أبيض على أسود)', 'Dark'],
+  sLook: ['الشكل', 'Appearance'], language: ['اللغة', 'Language'], theme: ['المظهر', 'Theme'],
+  themeAuto: ['تلقائي', 'Auto'], themeLight: ['فاتح', 'Light'], themeDark: ['داكن', 'Dark'],
   cardStyle: ['شكل البطاقات', 'Card style'], cs_stripe: ['شريط', 'Stripe'], cs_filled: ['ممتلئ', 'Filled'], cs_outline: ['إطار', 'Outline'], cs_minimal: ['بسيط', 'Minimal'],
   density: ['الكثافة', 'Density'], dn_cozy: ['مريحة', 'Cozy'], dn_compact: ['مضغوطة', 'Compact'],
   fontSize: ['حجم الخط', 'Font size'], fs_sm: ['صغير', 'Small'], fs_md: ['عادي', 'Normal'], fs_lg: ['كبير', 'Large'],
@@ -338,6 +339,7 @@ const D = {
 };
 const WD_SHORT = [['أحد','اثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'], ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']];
 
+/* =====================  State  ===================== */
 const KEY = 'myschedule.v1';
 const PALETTE = ['#0a0a0a','#333333','#595959','#7f7f7f','#a6a6a6','#c8c8c8'];
 const DEFAULT_SCALE = [
@@ -346,7 +348,7 @@ const DEFAULT_SCALE = [
   {min:64,letter:'D+',pts:1.3},{min:60,letter:'D',pts:1},{min:0,letter:'F',pts:0}
 ];
 const DEFAULTS = () => ({
-  settings: { lang:'ar', theme:'auto', icsUrl:'', proxy:'', reminders:[10], taskRemind:60, alarmSound:true, soundTone:'beep', autoMin:30,
+  settings: { lang:'ar', theme:'auto', icsUrl:'', proxy:'', reminders:[10], taskRemind:60, alarmSound:true, autoMin:30,
               hour12:true, weekStart:0, hideEmpty:true, cardStyle:'stripe', density:'cozy', fontSize:'md', viewMode:'day' },
   courses:{}, grades:[], gpaPrev:{gpa:'',credits:''}, scale:DEFAULT_SCALE.map(x=>({...x})),
   tasks:[], flags:{}, notified:{}, snapshot:null, icsText:'', lastSync:0, lastChanges:[], demo:false, push:{on:false}
@@ -364,9 +366,10 @@ function save() {
   if (state.push && state.push.on) schedulePushSync();
 }
 const S = () => state.settings;
-const ui = { tab:'schedule', day:sod(Date.now()), syncing:false, syncError:'', openCourse:{}, deferredInstall:null, pushKey:null, pushStatus:null, pushError:'', lastPushBody:'', pushTimer:null, tutStep:0 };
+const ui = { tab:'schedule', day:sod(Date.now()), syncing:false, syncError:'', openCourse:{}, deferredInstall:null, pushKey:null, pushStatus:null, pushError:'', lastPushBody:'', pushTimer:null };
 let EV = [], EVMAP = {};
 
+/* =====================  Helpers  ===================== */
 const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const isAr = () => S().lang === 'ar';
@@ -386,7 +389,7 @@ function cd(ms) {
 function hash(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return Math.abs(h); }
 const courseOf = title => state.courses[title] || {};
 const isDark = () => S().theme === 'dark' || (S().theme === 'auto' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
-function adaptColor(c) {
+function adaptColor(c) { // رمادي → يُعكس في الوضع الداكن ليبقى ظاهراً
   if (!isDark()) return c;
   const m = /^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(c);
   if (!m) return c;
@@ -417,6 +420,7 @@ function icon(n, cls) {
   return `<svg class="i ${cls || ''}" viewBox="0 0 24 24" aria-hidden="true">${P[n]}</svg>`;
 }
 
+/* =====================  Schedule data  ===================== */
 function loadEvents() {
   EV = []; EVMAP = {};
   if (!state.icsText) return;
@@ -448,6 +452,7 @@ function detectChanges(oldSnap) {
     else if (n.t !== o.t) res.push({type:'ch_title', title:n.t, when:n.s, detail:o.t + ' → ' + n.t});
   });
   Object.keys(neu).forEach(id => { if (!old[id] && neu[id].s < oldSnap.windowEnd) added.push({id, n:neu[id]}); });
+  // pair removed+added with same uid/title as "moved"
   removed.forEach(r => {
     const i = added.findIndex(a => a.n.u && a.n.u === r.o.u && a.n.t === r.o.t);
     if (i >= 0) { res.push({type:'ch_moved', title:r.o.t, when:added[i].n.s, from:r.o.s}); added.splice(i, 1); }
@@ -457,6 +462,7 @@ function detectChanges(oldSnap) {
   return res.slice(0, 30);
 }
 
+/* ---- fetching ---- */
 async function fetchText(u) {
   const r = await fetch(u, {cache:'no-store'});
   if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -469,7 +475,7 @@ async function fetchICS(url) {
   try { return await fetchText(url); }
   catch (e) {
     let proxy = (S().proxy || (window.APP_CONFIG && APP_CONFIG.proxy) || '').trim();
-    if (!proxy && /^https?:$/.test(location.protocol)) proxy = location.origin + '/proxy';
+    if (!proxy && /^https?:$/.test(location.protocol)) proxy = location.origin + '/proxy'; // البروكسي المدمج مع الموقع
     if (!proxy) throw e;
     const pu = new URL(proxy, location.href); pu.searchParams.set('url', url);
     return await fetchText(pu.toString());
@@ -499,12 +505,13 @@ async function sync(manual) {
   ui.syncing = false; save(); render();
 }
 
+/* ---- demo ---- */
 function demoICS() {
   const now = new Date(); now.setHours(0,0,0,0);
   const monday = new Date(now); monday.setDate(now.getDate() - ((now.getDay() + 6) % 7));
   const p = n => String(n).padStart(2, '0');
   const ds = (d, h, m) => `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}T${p(h)}${p(m)}00`;
-  const base = d => { const x = new Date(monday); x.setDate(monday.getDate() + d); return x; };
+  const base = d => { const x = new Date(monday); x.setDate(monday.getDate() + d); return x; };  // 0 = Monday
   const L = [
     ['CS101 Programming / البرمجة', 'SU,TU,TH', 8, 0, 9, 15, 'Lab B-204'],
     ['MATH201 Calculus II / تفاضل وتكامل', 'SU,TU', 9, 30, 10, 45, 'Hall A-12'],
@@ -523,37 +530,17 @@ function demoICS() {
   return out.join('\r\n');
 }
 
+/* =====================  Notifications / reminders  ===================== */
 function toast(msg) {
   const el = $('#toast'); el.firstElementChild.textContent = msg; el.classList.add('show');
   clearTimeout(toast.tm); toast.tm = setTimeout(() => el.classList.remove('show'), 3500);
 }
-function beep(type) {
+function beep() {
   if (!S().alarmSound) return;
-  const tone = type || S().soundTone || 'beep';
   try {
-    const AC = window.AudioContext || window.webkitAudioContext, ctx = new AC();
-    if (tone === 'chime') {
-      [523.25, 659.25, 783.99].forEach((freq, i) => {
-        const o = ctx.createOscillator(), g = ctx.createGain();
-        o.type = 'sine'; o.frequency.value = freq;
-        o.connect(g); g.connect(ctx.destination);
-        const st = ctx.currentTime + i * 0.12;
-        g.gain.setValueAtTime(0.2, st); g.gain.exponentialRampToValueAtTime(0.001, st + 0.6);
-        o.start(st); o.stop(st + 0.65);
-      });
-    } else if (tone === 'bell') {
-      const o = ctx.createOscillator(), g = ctx.createGain();
-      o.type = 'triangle'; o.frequency.value = 987.77;
-      o.connect(g); g.connect(ctx.destination);
-      g.gain.setValueAtTime(0.3, ctx.currentTime); g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.2);
-      o.start(); o.stop(ctx.currentTime + 1.25);
-    } else {
-      const o = ctx.createOscillator(), g = ctx.createGain();
-      o.type = 'sine'; o.frequency.value = 880;
-      o.connect(g); g.connect(ctx.destination);
-      g.gain.setValueAtTime(.25, ctx.currentTime); g.gain.exponentialRampToValueAtTime(.001, ctx.currentTime + .7);
-      o.start(); o.stop(ctx.currentTime + .75);
-    }
+    const AC = window.AudioContext || window.webkitAudioContext, ctx = new AC(), o = ctx.createOscillator(), g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination); o.frequency.value = 880; g.gain.setValueAtTime(.25, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(.001, ctx.currentTime + .7); o.start(); o.stop(ctx.currentTime + .75);
   } catch (e) {}
 }
 async function notify(title, body, tag) {
@@ -592,44 +579,7 @@ function checkReminders() {
   save();
 }
 
-const TUT_STEPS = [
-  {
-    title: 'الخطوة 1: افتح Outlook في المتصفح',
-    desc: 'ادخل على حسابك الجامعي عبر متصفح الكمبيوتر أو الجوال من الرابط outlook.office.com وليس من التطبيق.',
-    sim: `<div class="outlook-sim"><div class="sim-header"><span>Outlook Office</span><span>حساب الجامعة</span></div><div>الصفحة الرئيسية ← التقويم 📅</div></div>`
-  },
-  {
-    title: 'الخطوة 2: افتح إعدادات التقويم',
-    desc: 'اضغط على أيقونة الترس ⚙️ في أعلى الصفحة ثم اختر «التقويم» ثم «التقويمات المشتركة».',
-    sim: `<div class="outlook-sim"><div class="sim-header"><span>الإعدادات ⚙️</span></div><div>التقويم ← <b>التقويمات المشتركة (Shared calendars)</b> <span class="sim-btn sim-focus">اضغط هنا</span></div></div>`
-  },
-  {
-    title: 'الخطوة 3: نشر التقويم',
-    desc: 'تحت قسم «نشر تقويم» (Publish a calendar)، اختر التقويم الخاص بجدولك وحدد الصلاحية: «يمكنه عرض كل التفاصيل» ثم اضغط «نشر».',
-    sim: `<div class="outlook-sim"><div>نشر تقويم: [ الجدول الدراسي ▾ ]</div><div>الصلاحية: [ يمكنه عرض كل التفاصيل ▾ ]</div><div style="margin-top:.4rem"><span class="sim-btn sim-focus">نشر / Publish</span></div></div>`
-  },
-  {
-    title: 'الخطوة 4: نسخ رابط ICS والصقه',
-    desc: 'سوف يظهر لك رابطان، قم بنسخ رابط ICS (وليس HTML) ثم عد إلى موقعنا والصقه في خانة الرابط.',
-    sim: `<div class="outlook-sim"><div>HTML: https://outlook.office.../calendar.html</div><div style="margin-top:.3rem;font-weight:700" class="sim-focus">ICS: https://outlook.office.../calendar.ics ← (انسخ هذا)</div></div>`
-  }
-];
-
-function renderTutStep() {
-  const s = TUT_STEPS[ui.tutStep];
-  $('#tut-step-content').innerHTML = `<h4>${s.title}</h4><p class="small muted" style="margin:.4rem 0">${s.desc}</p>${s.sim}`;
-  $('#tut-num').textContent = `${ui.tutStep + 1} من ${TUT_STEPS.length}`;
-  $('#tut-prev').style.visibility = ui.tutStep === 0 ? 'hidden' : 'visible';
-  $('#tut-next').textContent = ui.tutStep === TUT_STEPS.length - 1 ? 'إنهاء' : 'التالي';
-}
-
-function openTutorial() {
-  ui.tutStep = 0;
-  renderTutStep();
-  $('#tut-modal').classList.add('open');
-}
-function closeTutorial() { $('#tut-modal').classList.remove('open'); }
-
+/* =====================  Views  ===================== */
 function bannerHTML() {
   const now = Date.now(), list = visibleEvents().filter(e => !e.cancelled && !e.allDay);
   const cur = list.find(e => e.start <= now && e.end > now), nxt = list.find(e => e.start > now);
@@ -663,6 +613,7 @@ function dayBlock(ds, now, showHead) {
 }
 function weekStartOf(ms) { const d = new Date(ms); return addDays(sod(ms), -((d.getDay() - S().weekStart + 7) % 7)); }
 
+/* =====================  Background push (works when the app is closed)  ===================== */
 function iosNeedsInstall() {
   const ua = navigator.userAgent || '';
   const ios = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
@@ -794,21 +745,21 @@ function viewSchedule() {
   }
   return h;
 }
-
 function viewWelcome() {
   return `<div class="card"><h2>${t('welcomeTitle')}</h2><p class="muted">${t('welcomeText')}</p>
     <label class="f">${t('icsUrl')}</label>
     <input type="url" id="w-url" dir="ltr" placeholder="${t('icsPlaceholder')}">
     <div class="row wrap" style="margin-top:.8rem">
       <button class="btn" data-act="loadUrl">${t('load')}</button>
-      <button class="btn ghost" data-act="openTut">${t('btnHowTo')}</button>
       <label class="btn ghost" style="cursor:pointer">${t('uploadIcs')}<input type="file" accept=".ics,text/calendar" data-change="uploadIcs" hidden></label>
       <button class="btn ghost" data-act="demo">${t('tryDemo')}</button>
     </div>
     ${ui.syncError ? `<p class="err small">${t('syncFail')}: ${esc(ui.syncError)}<br>${t('syncFailHint')}</p>` : ''}
-    </div>`;
+    <details><summary>${t('howTitle')}</summary><p>${t('howWhat')}</p>
+      <ol class="steps">${D.howSteps.map(x => `<li>${x[isAr() ? 0 : 1]}</li>`).join('')}</ol><p class="muted small">${t('howNote')}</p></details></div>`;
 }
 
+/* ---- grades ---- */
 function calc(g) {
   let gradedW = 0, earned = 0, totalW = 0;
   g.components.forEach(c => {
@@ -838,8 +789,8 @@ function viewGrades() {
   <div class="card"><div class="grid2">
     <div><div class="muted small">${t('semGpa')}</div><div class="big">${f1(st.sem, 2)}</div></div>
     <div><div class="muted small">${t('cumGpa')}</div><div class="big">${f1(st.cum, 2)}</div></div></div>
-    <div class="grid2"><div><label class="f">${t('prevGpa')}</label><input type="number" step="0.01" min="0" inputmode="decimal" value="${esc(state.gpaPrev.gpa)}" data-change="gpaPrev" data-k="gpa"><span class="sub-desc">معدلك السابق قبل هذا الفصل للعمليات الحسابية.</span></div>
-    <div><label class="f">${t('prevCredits')}</label><input type="number" step="1" min="0" inputmode="numeric" value="${esc(state.gpaPrev.credits)}" data-change="gpaPrev" data-k="credits"><span class="sub-desc">مجموع الساعات المكتسبة السابقة.</span></div></div></div>
+    <div class="grid2"><div><label class="f">${t('prevGpa')}</label><input type="number" step="0.01" min="0" inputmode="decimal" value="${esc(state.gpaPrev.gpa)}" data-change="gpaPrev" data-k="gpa"></div>
+    <div><label class="f">${t('prevCredits')}</label><input type="number" step="1" min="0" inputmode="numeric" value="${esc(state.gpaPrev.credits)}" data-change="gpaPrev" data-k="credits"></div></div></div>
   <div class="row wrap" style="margin-bottom:.8rem">
     <button class="btn" data-act="addCourse">${icon('plus', 's')} ${t('addCourse')}</button>
     <button class="btn ghost" data-act="importCourses">${t('importCourses')}</button></div>`;
@@ -881,6 +832,7 @@ function viewGrades() {
   return h;
 }
 
+/* ---- tasks ---- */
 function viewTasks() {
   const titles = [...new Set(EV.map(e => e.title))].sort();
   const pend = state.tasks.filter(x => !x.done).sort((a, b) => (a.due || 9e15) - (b.due || 9e15)), done = state.tasks.filter(x => x.done);
@@ -897,74 +849,54 @@ function viewTasks() {
     ${done.length ? `<details class="card"><summary>${t('doneTasks')} (${done.length})</summary>${done.map(row).join('')}</details>` : ''}`;
 }
 
+/* ---- settings ---- */
+function seg(key, opts, cur) { return `<div class="row wrap">${opts.map(o => `<button class="chip ${cur === o[0] ? 'on' : ''}" data-act="setVal" data-key="${key}" data-val="${o[0]}">${o[1]}</button>`).join('')}</div>`; }
 function viewSettings() {
   const s = S(), perm = ('Notification' in window) ? Notification.permission : 'unsupported';
   const rm = [0, 5, 10, 15, 30, 60];
   const hiddenList = Object.keys(state.courses).filter(k => state.courses[k].hidden);
   const src = state.demo ? t('usingDemo') : (!s.icsUrl && state.icsText ? t('usingFile') : '');
-  const sndTone = s.soundTone || 'beep';
   return `<h2>${t('tab_settings')}</h2>
   <div class="card"><h3>${t('sSource')}</h3>
     <label class="f">${t('icsUrl')}</label><input type="url" dir="ltr" value="${esc(s.icsUrl)}" data-change="set" data-key="icsUrl" placeholder="${t('icsPlaceholder')}">
-    <span class="sub-desc">رابط الـ ICS الخاص بجدولك من Outlook للربط المباشر.</span>
     <label class="f">${t('proxy')}</label><input type="url" dir="ltr" value="${esc(s.proxy)}" data-change="set" data-key="proxy" placeholder="https://xxxx.workers.dev">
-    <span class="sub-desc">${t('proxyHint')}</span>
+    <p class="muted small">${t('proxyHint')}</p>
     ${src ? `<p class="small">◆ ${src}</p>` : ''}
-    ${ui.syncError ? `<p class="err small">${t('syncFail')}:${esc(ui.syncError)}</p>` : ''}
-    <div class="row wrap" style="margin-top:.6rem"><button class="btn" data-act="syncManual">${t('saveLoad')}</button>
-      <button class="btn ghost" data-act="openTut">${t('btnHowTo')}</button>
+    ${ui.syncError ? `<p class="err small">${t('syncFail')}: ${esc(ui.syncError)}</p>` : ''}
+    <div class="row wrap"><button class="btn" data-act="syncManual">${t('saveLoad')}</button>
       <label class="btn ghost" style="cursor:pointer">${t('uploadIcs')}<input type="file" accept=".ics,text/calendar" data-change="uploadIcs" hidden></label>
       <button class="btn danger" data-act="clearSource">${t('clearSource')}</button></div>
     <label class="f">${t('autoRefresh')}</label>
-    ${seg('autoMin', [[15, '15 ' + t('min')], [30, '30 ' + t('min')], [60, '60 ' + t('min')], [0, isAr() ? 'يدوي' : 'Manual']], +s.autoMin)}
-    <span class="sub-desc">فترة المزامنة التلقائية لجلب جدولك وتحديث المحاضرات.</span></div>
+    ${seg('autoMin', [[15, '15 ' + t('min')], [30, '30 ' + t('min')], [60, '60 ' + t('min')], [0, isAr() ? 'يدوي' : 'Manual']], +s.autoMin)}</div>
   <div class="card"><h3>${t('sNotif')}</h3>
     ${perm === 'granted' ? `<p class="ok" style="color:var(--ok)">${t('notifOn')}</p>` : perm === 'denied' ? `<p class="err">${t('notifBlocked')}</p>` : perm === 'unsupported' ? `<p class="err small">${t('notifUnsupported')}</p>` : `<button class="btn" data-act="askNotif">◉ ${t('enableNotif')}</button>`}
     ${pushBlock()}
     <label class="f">${t('remindBefore')}</label>
     <div class="row wrap">${rm.map(m => `<button class="chip ${s.reminders.includes(m) ? 'on' : ''}" data-act="toggleRemind" data-m="${m}">${m === 0 ? t('atStart') : m + ' ' + t('min')}</button>`).join('')}</div>
-    <span class="sub-desc">الأوقات التي تفضل تنبيهك فيها قبل موعد كل محاضرة.</span>
     <label class="f">${t('taskRemind')}</label>
     ${seg('taskRemind', [[15, '15 ' + t('min')], [60, '1 ' + t('hr')], [180, '3 ' + t('hr')], [1440, '1 ' + t('dayShort')]], +s.taskRemind)}
-    <span class="sub-desc">الوقت المسبق لإرسال التنبيهات الخاصة بقائمة المهام والواجبات.</span>
     <label class="f"><input type="checkbox" ${s.alarmSound ? 'checked' : ''} data-change="set" data-key="alarmSound" data-bool="1"> ${t('sound')}</label>
-    <span class="sub-desc">تفعيل/إلغاء الأصوات والمؤثرات الصوتية عند صدور إشعار.</span>
-    <label class="f">نوع صوت المنبه</label>
-    ${seg('soundTone', [['beep', 'افتراضي (Beep)'], ['chime', 'نغمة (Chime)'], ['bell', 'جرس (Bell)']], sndTone)}
-    <span class="sub-desc">اختر صوت المنبه المفضل مع إمكانية تجريبه.</span>
-    <div style="margin-top:.6rem" class="row wrap"><button class="btn ghost sm" data-act="testSoundTone">تجربة الصوت 🔊</button><button class="btn ghost sm" data-act="testNotif">${t('testNotif')}</button></div>
-    <p class="muted small" style="margin-top:.6rem">${t('notifNote')}</p></div>
+    <button class="btn ghost sm" data-act="testNotif">${t('testNotif')}</button>
+    <p class="muted small">${t('notifNote')}</p></div>
   <div class="card"><h3>${t('sLook')}</h3>
     <label class="f">${t('language')}</label>${seg('lang', [['ar', 'العربية'], ['en', 'English']], s.lang)}
-    <span class="sub-desc">تغيير لغة الواجهة للتطبيق.</span>
-    <label class="f">${t('theme')}</label>${seg('theme', [['light', t('themeLight')], ['dark', t('themeDark')], ['auto', t('themeAuto')]], s.theme)}
-    <span class="sub-desc">التبديل بين وضع الأبيض والأسود أو الوضع الداكن العاكس.</span>
+    <label class="f">${t('theme')}</label>${seg('theme', [['auto', t('themeAuto')], ['light', t('themeLight')], ['dark', t('themeDark')]], s.theme)}
     <label class="f">${t('cardStyle')}</label>${seg('cardStyle', [['stripe', t('cs_stripe')], ['filled', t('cs_filled')], ['outline', t('cs_outline')], ['minimal', t('cs_minimal')]], s.cardStyle)}
-    <span class="sub-desc">طريقة وتصميم عرض المحاضرات داخل الجدول.</span>
     <label class="f">${t('density')}</label>${seg('density', [['cozy', t('dn_cozy')], ['compact', t('dn_compact')]], s.density)}
-    <span class="sub-desc">التحكم بالمساحات والمسافات بين المحاضرات.</span>
     <label class="f">${t('fontSize')}</label>${seg('fontSize', [['sm', t('fs_sm')], ['md', t('fs_md')], ['lg', t('fs_lg')]], s.fontSize)}
-    <span class="sub-desc">تعديل حجم الخطوط لراحة القراءة.</span>
     <label class="f">${t('weekStart')}</label>${seg('weekStart', [[6, D.wd[isAr() ? 0 : 1][6]], [0, D.wd[isAr() ? 0 : 1][0]], [1, D.wd[isAr() ? 0 : 1][1]]], +s.weekStart)}
-    <span class="sub-desc">تحديد اليوم الأول المعتمد للأسبوع في عرض الجدول.</span>
     <label class="f"><input type="checkbox" ${s.hour12 ? 'checked' : ''} data-change="set" data-key="hour12" data-bool="1"> ${t('hour12')}</label>
-    <span class="sub-desc">عرض الأوقات بتنسيق 12 ساعة (ص/م) أو نظام 24 ساعة.</span>
-    <label class="f"><input type="checkbox" ${s.hideEmpty ? 'checked' : ''} data-change="set" data-key="hideEmpty" data-bool="1"> ${t('hideEmpty')}</label>
-    <span class="sub-desc">إخفاء الأيام التي لا تحتوي على أي محاضرات في العرض الأسبوعي.</span></div>
+    <label class="f"><input type="checkbox" ${s.hideEmpty ? 'checked' : ''} data-change="set" data-key="hideEmpty" data-bool="1"> ${t('hideEmpty')}</label></div>
   ${hiddenList.length ? `<div class="card"><h3>${t('sHidden')}</h3>${hiddenList.map(k => `<div class="row" style="padding:.3rem 0"><span class="grow">${esc(k)}</span><button class="btn ghost sm" data-act="unhide" data-title="${esc(k)}">${t('show')}</button></div>`).join('')}</div>` : ''}
   <div class="card"><h3>${t('sData')}</h3><div class="row wrap">
     ${ui.deferredInstall ? `<button class="btn" data-act="installApp">${t('install')}</button>` : ''}
     <button class="btn ghost" data-act="exportData">${t('exportData')}</button>
     <label class="btn ghost" style="cursor:pointer">${t('importData')}<input type="file" accept=".json,application/json" data-change="importData" hidden></label>
     <button class="btn danger" data-act="resetAll">${t('resetAll')}</button></div>
-    <span class="sub-desc">إدارة وتصدير البيانات ومسح الذاكرة عند الحاجة.</span>
-    <p class="muted small">${t('iosTip')}</p></div>
-  <div class="footer-rights">
-    <b>26161 · mc.college</b><br>
-    by Al habsi
-  </div>`;
+    <p class="muted small">${t('iosTip')}</p></div>`;
 }
 
+/* ---- shell ---- */
 function header() {
   const tabs = [['schedule', 'cal'], ['grades', 'star'], ['tasks', 'tasks'], ['settings', 'gear']];
   const ago = state.lastSync ? new Date(state.lastSync).toLocaleTimeString(loc(), {hour:'numeric', minute:'2-digit', hour12:S().hour12}) : t('never');
@@ -993,6 +925,7 @@ function render() {
   window.scrollTo(0, y);
 }
 
+/* ---- event sheet ---- */
 let sheetEv = null;
 function openEv(id) {
   const e = EVMAP[id]; if (!e) return; sheetEv = id;
@@ -1020,6 +953,7 @@ function openEv(id) {
 function closeSheet() { $('#sheet').classList.remove('open'); sheetEv = null; render(); }
 function setCourse(title, patch) { state.courses[title] = {...courseOf(title), ...patch}; save(); }
 
+/* =====================  Actions  ===================== */
 const A = {
   tab: el => { ui.tab = el.dataset.tab; render(); window.scrollTo(0, 0); },
   view: el => { S().viewMode = el.dataset.v; save(); render(); },
@@ -1029,10 +963,6 @@ const A = {
   pickDay: el => { ui.day = +el.dataset.d; render(); },
   openEv: el => openEv(el.dataset.id),
   closeSheet: () => closeSheet(),
-  openTut: () => openTutorial(),
-  closeTut: () => closeTutorial(),
-  tutNext: () => { if (ui.tutStep < TUT_STEPS.length - 1) { ui.tutStep++; renderTutStep(); } else closeTutorial(); },
-  tutPrev: () => { if (ui.tutStep > 0) { ui.tutStep--; renderTutStep(); } },
   pinCourse: el => { const c = courseOf(el.dataset.title); setCourse(el.dataset.title, {pinned: !c.pinned}); openEv(sheetEv); },
   flagEv: el => { const id = el.dataset.id; if (state.flags[id]) delete state.flags[id]; else state.flags[id] = 1; save(); openEv(sheetEv); },
   hideCourse: el => { setCourse(el.dataset.title, {hidden:true}); closeSheet(); },
@@ -1074,7 +1004,6 @@ const A = {
       toast(r.ok ? t('pushTestSent') : t('pushFail'));
     } catch (e) { toast(t('pushFail')); }
   },
-  testSoundTone: () => beep(S().soundTone || 'beep'),
   testNotif: () => notify(t('appName'), t('testBody'), 'test'),
   addCourse: () => { const id = uid(); state.grades.push({id, name:'', credits:3, target:90, letter:'', components:[]}); ui.openCourse[id] = true; save(); render(); },
   importCourses: () => {
@@ -1146,9 +1075,8 @@ const C = {
   }
 };
 document.addEventListener('click', ev => {
-  const sh = $('#sheet'), tut = $('#tut-modal');
+  const sh = $('#sheet');
   if (ev.target === sh) return closeSheet();
-  if (ev.target === tut) return closeTutorial();
   const el = ev.target.closest('[data-act]');
   if (el && A[el.dataset.act]) A[el.dataset.act](el, ev);
 });
@@ -1157,6 +1085,7 @@ document.addEventListener('change', ev => {
   if (el && C[el.dataset.change]) C[el.dataset.change](el, ev);
 });
 
+/* =====================  Timers / PWA  ===================== */
 let syncTimer = null;
 function schedule() {
   clearInterval(syncTimer);
@@ -1178,6 +1107,14 @@ if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
   window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
 }
 
+/* =====================  Boot  ===================== */
+try {
+  if (/^https?:$/.test(location.protocol)) {
+    const pageUrl = location.origin + location.pathname.replace(/index\.html$/, '');
+    const l = document.createElement('link'); l.rel = 'canonical'; l.href = pageUrl; document.head.appendChild(l);
+    const m = document.createElement('meta'); m.setAttribute('property', 'og:url'); m.content = pageUrl; document.head.appendChild(m);
+  }
+} catch (e) {}
 loadEvents();
 render();
 if (state.demo) { state.icsText = demoICS(); loadEvents(); render(); }
