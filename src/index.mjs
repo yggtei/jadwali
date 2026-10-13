@@ -48,6 +48,14 @@ async function api(path, request, env, url) {
     const k = await (await env.KEYS.get(env.KEYS.idFromName('main')).fetch('https://do/keys')).json();
     return json({ key: k.publicKey });
   }
+  if (path === '/api/feedback') {
+    if (request.method !== 'POST') return json({ error: 'method' }, 405);
+    try {
+      const b = JSON.parse((await request.text()).slice(0, 8000));
+      console.log('FEEDBACK', JSON.stringify({ stars: Number(b.stars) || 0, text: String(b.text || '').slice(0, 1500), lang: String(b.lang || '').slice(0, 5), at: Date.now() }));
+      return json({ ok: true });
+    } catch { return json({ error: 'bad_json' }, 400); }
+  }
   const route = ROUTES[path];
   if (!route) return json({ error: 'not_found' }, 404);
   if (request.method !== 'POST') return json({ error: 'method' }, 405);
