@@ -16,6 +16,9 @@ class_name = "Subscriber"
 name = "KEYS"
 class_name = "KeyStore"
 
+[observability]
+enabled = true
+
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["Subscriber", "KeyStore"]
