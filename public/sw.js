@@ -1,5 +1,5 @@
 /* Service worker: يخزّن التطبيق ليشتغل بدون إنترنت + يعرض الإشعارات */
-const CACHE = 'myschedule-v4';
+const CACHE = 'myschedule-v5';
 const SHELL = ['./', 'index.html', 'ics.js', 'config.js', 'manifest.webmanifest',
   'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'];
 
@@ -29,7 +29,7 @@ self.addEventListener('fetch', e => {
 });
 
 self.addEventListener('notificationclick', e => {
-  e.notification.close();
+  if (!(e.notification.data && e.notification.data.pin)) e.notification.close();
   e.waitUntil(
     self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
       for (const c of list) { if ('focus' in c) return c.focus(); }
