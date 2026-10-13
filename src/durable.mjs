@@ -105,7 +105,8 @@ export function sanitize(b) {
     cfg.tasks = b.tasks.slice(0, 200).map(k => ({
       id: String(k && k.id || '').slice(0, 40),
       title: String(k && k.title || '').slice(0, 120),
-      due: Number(k && k.due)
+      due: Number(k && k.due),
+      rem: Array.isArray(k && k.rem) ? [...new Set(k.rem.map(x => clampInt(x, 0, 10080, -1)).filter(x => x >= 0))].slice(0, 6) : []
     })).filter(k => k.id && Number.isFinite(k.due));
   }
   return { cfg, badHost };
@@ -273,8 +274,8 @@ export class Subscriber {
         });
       }
     }
-    for (const k of cfg.tasks) {
-      const key = 't|' + k.id, fire = k.due - cfg.taskRemind * MIN;
+    for (const k of cfg.tasks) for (const m of (k.rem && k.rem.length ? k.rem : [cfg.taskRemind])) {
+      const key = 't|' + k.id + '|' + m, fire = k.due - m * MIN;
       if (meta.sent[key] || now < fire - 1500) continue;
       meta.sent[key] = now;
       if (now > k.due + 6 * 3600000) continue;
@@ -304,9 +305,9 @@ export class Subscriber {
         if (!meta.sent['e|' + o.i + '|' + m] && fire > now) next = Math.min(next, fire);
       }
     }
-    for (const k of cfg.tasks) {
-      const fire = k.due - cfg.taskRemind * MIN;
-      if (!meta.sent['t|' + k.id] && fire > now) next = Math.min(next, fire);
+    for (const k of cfg.tasks) for (const m of (k.rem && k.rem.length ? k.rem : [cfg.taskRemind])) {
+      const fire = k.due - m * MIN;
+      if (!meta.sent['t|' + k.id + '|' + m] && fire > now) next = Math.min(next, fire);
     }
     if (meta.testAt) next = Math.min(next, meta.testAt);
     if (meta.retryAt) next = Math.min(next, meta.retryAt);
