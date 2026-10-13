@@ -58,16 +58,10 @@
 html,body{margin:0}
 body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,"Noto Sans Arabic",Arial,sans-serif;font-size:16px;line-height:1.5;min-height:100vh;position:relative}
 
-/* ---------- خلفية: أشكال هندسية كثيرة ومتكررة (طبقتان بمقاسين مختلفين) ---------- */
-body::before{
-  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:var(--ink);opacity:var(--pat-op);
-  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='20' cy='20' r='9'/%3E%3Cpath d='M70 10 L88 42 L52 42 Z'/%3E%3Crect x='92' y='12' width='20' height='20' transform='rotate%2845 102 22%29'/%3E%3Cpath d='M20 70 v22 M9 81 h22'/%3E%3Ccircle cx='66' cy='78' r='5' fill='black'/%3E%3Cpath d='M92 76 L102 70 L112 76 L112 88 L102 94 L92 88 Z'/%3E%3Cpath d='M6 106 q8 -12 16 0 t16 0'/%3E%3Crect x='60' y='100' width='28' height='14'/%3E%3Cpath d='M98 112 a10 10 0 0 1 20 0 Z'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190' viewBox='0 0 190 190' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='40' cy='40' r='22'/%3E%3Ccircle cx='40' cy='40' r='11'/%3E%3Cpath d='M120 20 L160 20 L140 56 Z'/%3E%3Crect x='20' y='110' width='30' height='30'/%3E%3Cpath d='M92 98 l26 26 -26 26 -26 -26 Z'/%3E%3Cpath d='M152 108 v34 M135 125 h34'/%3E%3Ccircle cx='150' cy='172' r='2.5' fill='black'/%3E%3Ccircle cx='162' cy='172' r='2.5' fill='black'/%3E%3Ccircle cx='174' cy='172' r='2.5' fill='black'/%3E%3Cpath d='M20 162 h40 M20 170 h40 M20 178 h40'/%3E%3Cpath d='M104 176 a14 14 0 0 1 28 0'/%3E%3Cpath d='M70 70 l8 8 8 -8 8 8 8 -8'/%3E%3Ccircle cx='170' cy='60' r='7' fill='black'/%3E%3C/svg%3E");
-  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='20' cy='20' r='9'/%3E%3Cpath d='M70 10 L88 42 L52 42 Z'/%3E%3Crect x='92' y='12' width='20' height='20' transform='rotate%2845 102 22%29'/%3E%3Cpath d='M20 70 v22 M9 81 h22'/%3E%3Ccircle cx='66' cy='78' r='5' fill='black'/%3E%3Cpath d='M92 76 L102 70 L112 76 L112 88 L102 94 L92 88 Z'/%3E%3Cpath d='M6 106 q8 -12 16 0 t16 0'/%3E%3Crect x='60' y='100' width='28' height='14'/%3E%3Cpath d='M98 112 a10 10 0 0 1 20 0 Z'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190' viewBox='0 0 190 190' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='40' cy='40' r='22'/%3E%3Ccircle cx='40' cy='40' r='11'/%3E%3Cpath d='M120 20 L160 20 L140 56 Z'/%3E%3Crect x='20' y='110' width='30' height='30'/%3E%3Cpath d='M92 98 l26 26 -26 26 -26 -26 Z'/%3E%3Cpath d='M152 108 v34 M135 125 h34'/%3E%3Ccircle cx='150' cy='172' r='2.5' fill='black'/%3E%3Ccircle cx='162' cy='172' r='2.5' fill='black'/%3E%3Ccircle cx='174' cy='172' r='2.5' fill='black'/%3E%3Cpath d='M20 162 h40 M20 170 h40 M20 178 h40'/%3E%3Cpath d='M104 176 a14 14 0 0 1 28 0'/%3E%3Cpath d='M70 70 l8 8 8 -8 8 8 8 -8'/%3E%3Ccircle cx='170' cy='60' r='7' fill='black'/%3E%3C/svg%3E");
-  -webkit-mask-size:120px 120px,190px 190px;mask-size:120px 120px,190px 190px;
-  -webkit-mask-position:0 0,47px 63px;mask-position:0 0,47px 63px;
-  -webkit-mask-repeat:repeat,repeat;mask-repeat:repeat,repeat;
-}
+/* خلفية أزرار السوني */
+body::before,body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;-webkit-mask-repeat:repeat;mask-repeat:repeat}
+body::before{background:var(--pat-c,var(--ink));opacity:var(--pat-op);-webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%272.4%27%20stroke-linejoin%3D%27round%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M24%2015%20L32%2029%20H16%20Z%27%2F%3E%3Ccircle%20cx%3D%2772%27%20cy%3D%2724%27%20r%3D%278%27%2F%3E%3Cpath%20d%3D%27M16%2064%20L32%2080%20M32%2064%20L16%2080%27%2F%3E%3Crect%20x%3D%2764%27%20y%3D%2764%27%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%271%27%2F%3E%3C%2Fsvg%3E");mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%272.4%27%20stroke-linejoin%3D%27round%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M24%2015%20L32%2029%20H16%20Z%27%2F%3E%3Ccircle%20cx%3D%2772%27%20cy%3D%2724%27%20r%3D%278%27%2F%3E%3Cpath%20d%3D%27M16%2064%20L32%2080%20M32%2064%20L16%2080%27%2F%3E%3Crect%20x%3D%2764%27%20y%3D%2764%27%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%271%27%2F%3E%3C%2Fsvg%3E");-webkit-mask-size:96px;mask-size:96px}
+body::after{background:#c9a24b;opacity:calc(var(--pat-op)*1.7);-webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27288%27%20height%3D%27288%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%272.4%27%20stroke-linejoin%3D%27round%27%20stroke-linecap%3D%27round%27%3E%3Ccircle%20cx%3D%2796%27%20cy%3D%2796%27%20r%3D%278%27%2F%3E%3Cpath%20d%3D%27M216%20190%20L224%20204%20H208%20Z%27%2F%3E%3C%2Fsvg%3E");mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27288%27%20height%3D%27288%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%272.4%27%20stroke-linejoin%3D%27round%27%20stroke-linecap%3D%27round%27%3E%3Ccircle%20cx%3D%2796%27%20cy%3D%2796%27%20r%3D%278%27%2F%3E%3Cpath%20d%3D%27M216%20190%20L224%20204%20H208%20Z%27%2F%3E%3C%2Fsvg%3E");-webkit-mask-size:288px;mask-size:288px}
 
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
@@ -217,6 +211,20 @@ code{background:var(--accent-soft);padding:.05rem .35rem;border-radius:6px;font-
 .nc{display:flex;gap:.8rem;align-items:center;justify-content:space-between;flex-wrap:wrap;text-align:start}
 /* ---------- نص بديل لمحركات البحث (يختفي بعد تشغيل التطبيق) ---------- */
 .seo-fallback{max-width:640px;margin:3rem auto;padding:1.2rem;text-align:center}
+.bar{padding-inline:5.8rem!important}
+.corner{position:absolute;inset-inline-start:.6rem;top:50%;transform:translateY(-50%);display:flex;gap:.3rem}
+.btn,.chip,.dchip,.ev,.pin-card,.icon-btn{transition:transform .15s,background .2s,border-color .2s}
+.btn:active,.chip:active,.dchip:active,.ev:active,.pin-card:active{transform:scale(.96)}
+.fx{animation:fx .28s ease}@keyframes fx{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.sheet{animation:fx .25s ease}
+.credit{text-align:center;color:var(--muted);font-size:.7rem;margin:1.6rem 0 0;line-height:1.4}
+.hint{color:var(--muted);font-size:.8rem;margin:.2rem 0 .5rem}
+.mock{border:1px solid var(--edge);border-radius:12px;padding:8px;margin:10px 0;background:var(--bg)}
+.mock div{padding:6px 10px;border-radius:8px;color:var(--muted)}.mock .h{border:2px solid #c9a24b;color:var(--text);font-weight:700}.mock .h:after{content:"  ◀";color:#c9a24b}
+.stars button{border:0;background:none;font-size:1.7rem;padding:0 .2rem;color:var(--muted)}.stars button.on{color:#c9a24b}
+input[type=range]{padding:0;border:0;background:none}
+@media print{.top,nav,.corner,#toast,.sync-line,.days,.credit,.alert,.card.nc{display:none!important}body::before,body::after{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -252,7 +260,7 @@ const D = {
   changesTitle: ['تغييرات في جدولك', 'Changes in your schedule'], gotIt: ['تم', 'Got it'],
   ch_added: ['محاضرة جديدة', 'New'], ch_removed: ['حُذفت', 'Removed'], ch_cancelled: ['أُلغيت', 'Cancelled'],
   ch_moved: ['تغيّر الموعد', 'Rescheduled'], ch_room: ['تغيّرت القاعة', 'Room changed'], ch_title: ['تغيّر الاسم', 'Renamed'],
-  min: ['د', 'm'], hr: ['س', 'h'], dayShort: ['ي', 'd'],
+  min: ['دقيقة', 'min'], hr: ['ساعة', 'hr'], dayShort: ['يوم', 'd'],
   /* welcome */
   welcomeTitle: ['أهلاً! خلنا نجيب جدولك', "Welcome! Let's load your schedule"],
   welcomeText: ['الصق رابط التقويم (ICS) من Outlook، وبيتحدّث الجدول عندك تلقائياً كل ما تغيّر.', 'Paste your Outlook calendar (ICS) link and it will update automatically whenever it changes.'],
@@ -349,7 +357,7 @@ const DEFAULT_SCALE = [
 ];
 const DEFAULTS = () => ({
   settings: { lang:'ar', theme:'auto', icsUrl:'', proxy:'', reminders:[10], taskRemind:60, alarmSound:true, autoMin:30,
-              hour12:true, weekStart:0, hideEmpty:true, cardStyle:'stripe', density:'cozy', fontSize:'md', viewMode:'day' },
+              hour12:true, weekStart:0, hideEmpty:true, cardStyle:'stripe', density:'cozy', fontSize:'md', viewMode:'day', patColor:'', patOp:0, pinTasks:true, classTone:'bell', taskTone:'pulse', doctor:false },
   courses:{}, grades:[], gpaPrev:{gpa:'',credits:''}, scale:DEFAULT_SCALE.map(x=>({...x})),
   tasks:[], flags:{}, notified:{}, snapshot:null, icsText:'', lastSync:0, lastChanges:[], demo:false, push:{on:false}
 });
@@ -383,8 +391,8 @@ const fmtDT = ms => new Date(ms).toLocaleString(loc(), {weekday:'short', day:'nu
 function cd(ms) {
   const m = Math.max(1, Math.ceil(ms / 60000));
   if (m < 60) return m + ' ' + t('min');
-  if (m < 1440) return Math.floor(m / 60) + t('hr') + ' ' + (m % 60 ? (m % 60) + t('min') : '');
-  return Math.floor(m / 1440) + ' ' + t('dayShort') + ' ' + Math.floor((m % 1440) / 60) + t('hr');
+  if (m < 1440) return Math.floor(m / 60) + ' ' + t('hr') + (m % 60 ? ' ' + (m % 60) + ' ' + t('min') : '');
+  return Math.floor(m / 1440) + ' ' + t('dayShort') + ' ' + Math.floor((m % 1440) / 60) + ' ' + t('hr');
 }
 function hash(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return Math.abs(h); }
 const courseOf = title => state.courses[title] || {};
@@ -535,16 +543,16 @@ function toast(msg) {
   const el = $('#toast'); el.firstElementChild.textContent = msg; el.classList.add('show');
   clearTimeout(toast.tm); toast.tm = setTimeout(() => el.classList.remove('show'), 3500);
 }
-function beep() {
+function beep(kind) {
   if (!S().alarmSound) return;
+  const tn = TONES[S()[kind === 'task' ? 'taskTone' : 'classTone']] || TONES.bell;
   try {
-    const AC = window.AudioContext || window.webkitAudioContext, ctx = new AC(), o = ctx.createOscillator(), g = ctx.createGain();
-    o.connect(g); g.connect(ctx.destination); o.frequency.value = 880; g.gain.setValueAtTime(.25, ctx.currentTime);
-    g.gain.exponentialRampToValueAtTime(.001, ctx.currentTime + .7); o.start(); o.stop(ctx.currentTime + .75);
+    const AC = window.AudioContext || window.webkitAudioContext, ctx = new AC(); let at = ctx.currentTime;
+    for (const [f, d] of tn[1]) { const o = ctx.createOscillator(), g = ctx.createGain(); o.frequency.value = f; g.gain.setValueAtTime(.3, at); g.gain.exponentialRampToValueAtTime(.001, at + d); o.connect(g); g.connect(ctx.destination); o.start(at); o.stop(at + d); at += d + .04; }
   } catch (e) {}
 }
 async function notify(title, body, tag) {
-  toast(title + ' — ' + body.split('\n')[0]); beep();
+  toast(title + ' — ' + body.split('\n')[0]); beep(String(tag).startsWith('t|') ? 'task' : 'class');
   if (!('Notification' in window) || Notification.permission !== 'granted') return;
   const opts = { body, tag, icon:'icons/icon-192.png', badge:'icons/icon-192.png', lang:S().lang, dir:isAr() ? 'rtl' : 'ltr', vibrate:[120, 60, 120] };
   try {
@@ -569,10 +577,12 @@ function checkReminders() {
   });
   state.tasks.forEach(k => {
     if (k.done || !k.due) return;
-    const key = 't|' + k.id;
-    if (state.notified[key] || now < k.due - s.taskRemind * 60000 || now > k.due + 6 * 3600e3) return;
-    state.notified[key] = now;
-    notify(`${t('taskReminderT')}: ${k.title}`, fmtDT(k.due), key);
+    (k.rem && k.rem.length ? k.rem : [s.taskRemind]).forEach(m => {
+      const key = 't|' + k.id + '|' + m;
+      if (state.notified[key] || now < k.due - m * 60000 || now > k.due + 6 * 3600e3) return;
+      state.notified[key] = now;
+      notify(`${t('taskReminderT')}: ${k.title}`, fmtDT(k.due) + (k.due > now ? ' · ' + cd(k.due - now) : ''), key);
+    });
   });
   const cut = now - 8 * 86400e3; let dirty = false;
   Object.keys(state.notified).forEach(k => { if (state.notified[k] < cut) { delete state.notified[k]; dirty = true; } });
@@ -600,7 +610,7 @@ function evCard(e, now) {
     <div class="tm">${e.allDay ? '—' : fmtTime(e.start)}${e.allDay ? '' : `<small>${fmtTime(e.end)}</small>`}</div>
     <div class="grow">
       <div class="tt">${esc(e.title)} ${c.pinned ? icon('pin', 's') : ''}${state.flags[e.id] ? icon('flag', 's') : ''} ${e.cancelled ? `<span class="badge">${t('cancelled')}</span>` : ''}</div>
-      <div class="mt">${e.location ? '◆ ' + esc(e.location) + ' · ' : ''}${dur >= 60 ? Math.floor(dur / 60) + t('hr') + (dur % 60 ? ' ' + (dur % 60) + t('min') : '') : dur + ' ' + t('min')}</div>
+      <div class="mt">${e.location ? '◆ ' + esc(e.location) + ' · ' : ''}${dur >= 60 ? Math.floor(dur / 60) + ' ' + t('hr') + (dur % 60 ? ' ' + (dur % 60) + ' ' + t('min') : '') : dur + ' ' + t('min')}</div>
       ${c.note ? `<div class="note">≡ ${esc(c.note).slice(0, 90)}</div>` : ''}
     </div></button>`;
 }
@@ -632,7 +642,7 @@ function pushPayload(endpoint) {
     const c = state.courses[k], rem = c.remind === 'off' ? 'off' : (typeof c.remind === 'number' ? c.remind : null);
     if (c.hidden || rem !== null) courses[k] = {hidden: !!c.hidden, remind: rem};
   });
-  const tasks = state.tasks.filter(k => !k.done && k.due).map(k => ({id:k.id, title:k.title, due:k.due}));
+  const tasks = state.tasks.filter(k => !k.done && k.due).map(k => ({id:k.id, title:k.title, due:k.due, rem:k.rem || []}));
   const p = { endpoint, icsUrl:s.icsUrl, reminders:s.reminders, taskRemind:+s.taskRemind, lang:s.lang,
               tz:(Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'), hour12:!!s.hour12, courses, tasks };
   if (!s.icsUrl && !state.demo && state.icsText && state.icsText.length < 550000) p.icsText = state.icsText;
@@ -755,6 +765,7 @@ function viewWelcome() {
       <button class="btn ghost" data-act="demo">${t('tryDemo')}</button>
     </div>
     ${ui.syncError ? `<p class="err small">${t('syncFail')}: ${esc(ui.syncError)}<br>${t('syncFailHint')}</p>` : ''}
+    <div class="row wrap" style="margin-top:.6rem"><button class="btn ghost sm" data-act="help">${_ar('كيف أحصل على الرابط؟ (بالصور)', 'How to get the link (step by step)')}</button><button class="btn ghost sm" data-act="aiDlg">${_ar('عندي جدول PDF', 'My schedule is a PDF')}</button></div>
     <details><summary>${t('howTitle')}</summary><p>${t('howWhat')}</p>
       <ol class="steps">${D.howSteps.map(x => `<li>${x[isAr() ? 0 : 1]}</li>`).join('')}</ol><p class="muted small">${t('howNote')}</p></details></div>`;
 }
@@ -844,6 +855,8 @@ function viewTasks() {
     <input type="text" id="tk-title" placeholder="${t('taskTitle')}">
     <div class="grid2"><div><label class="f">${t('due')}</label><input type="datetime-local" id="tk-due"></div>
     <div><label class="f">${t('course')}</label><input type="text" id="tk-course" list="tk-courses"><datalist id="tk-courses">${titles.map(x => `<option value="${esc(x)}">`).join('')}</datalist></div></div>
+    <label class="f">${_ar('نبّهني قبل الموعد بـ (اختر أكثر من وقت)', 'Remind me before (pick several)')}</label>
+    <div class="row wrap" id="tk-rems">${[1440, 60, 30, 15, 5, 0].map(m => `<label class="chip"><input type="checkbox" value="${m}" ${m == 60 || m == 15 ? 'checked' : ''}> ${m === 0 ? _ar('وقت الموعد', 'At due time') : m === 1440 ? '1 ' + t('dayShort') : m === 60 ? '1 ' + t('hr') : m + ' ' + t('min')}</label>`).join('')}</div>
     <div style="margin-top:.8rem"><button class="btn" data-act="addTask">${icon('plus', 's')} ${t('add')}</button></div></div>
     <div class="card">${pend.length ? pend.map(row).join('') : `<div class="empty">${t('noTasks')}</div>`}</div>
     ${done.length ? `<details class="card"><summary>${t('doneTasks')} (${done.length})</summary>${done.map(row).join('')}</details>` : ''}`;
@@ -888,6 +901,7 @@ function viewSettings() {
     <label class="f"><input type="checkbox" ${s.hour12 ? 'checked' : ''} data-change="set" data-key="hour12" data-bool="1"> ${t('hour12')}</label>
     <label class="f"><input type="checkbox" ${s.hideEmpty ? 'checked' : ''} data-change="set" data-key="hideEmpty" data-bool="1"> ${t('hideEmpty')}</label></div>
   ${hiddenList.length ? `<div class="card"><h3>${t('sHidden')}</h3>${hiddenList.map(k => `<div class="row" style="padding:.3rem 0"><span class="grow">${esc(k)}</span><button class="btn ghost sm" data-act="unhide" data-title="${esc(k)}">${t('show')}</button></div>`).join('')}</div>` : ''}
+  ${extraSettings()}
   <div class="card"><h3>${t('sData')}</h3><div class="row wrap">
     ${ui.deferredInstall ? `<button class="btn" data-act="installApp">${t('install')}</button>` : ''}
     <button class="btn ghost" data-act="exportData">${t('exportData')}</button>
@@ -902,7 +916,7 @@ function header() {
   const ago = state.lastSync ? new Date(state.lastSync).toLocaleTimeString(loc(), {hour:'numeric', minute:'2-digit', hour12:S().hour12}) : t('never');
   return `<div class="top"><header><div class="bar"><div class="logo-wrap"><h1 class="logo">${LOGO}<b>${t('appName')}</b></h1>
     <div class="muted small" id="status">${statusText(ago)}</div></div>
-    <button class="icon-btn ${ui.syncing ? 'spin' : ''}" id="syncbtn" data-act="syncManual" aria-label="${t('syncNow')}">${icon('refresh')}</button></div></header>
+    <div class="corner"><button class="icon-btn" data-act="about" aria-label="about">ⓘ</button><button class="icon-btn" data-act="feedback" aria-label="feedback">☆</button></div><button class="icon-btn ${ui.syncing ? 'spin' : ''}" id="syncbtn" data-act="syncManual" aria-label="${t('syncNow')}">${icon('refresh')}</button></div></header>
     <nav>${tabs.map(x => `<button class="${ui.tab === x[0] ? 'on' : ''}" data-act="tab" data-tab="${x[0]}">${icon(x[1])}<span>${t('tab_' + x[0])}</span></button>`).join('')}</nav></div>`;
 }
 function statusText(ago) {
@@ -917,11 +931,13 @@ function renderStatus() {
 function render() {
   const s = S(), root = document.documentElement;
   root.lang = s.lang; root.dir = isAr() ? 'rtl' : 'ltr'; root.dataset.theme = s.theme;
+  s.patColor ? root.style.setProperty('--pat-c', s.patColor) : root.style.removeProperty('--pat-c');
+  +s.patOp ? root.style.setProperty('--pat-op', s.patOp / 100) : root.style.removeProperty('--pat-op');
   document.body.dataset.card = s.cardStyle; document.body.dataset.density = s.density; document.body.dataset.size = s.fontSize;
   const tc = document.querySelector('meta[name=theme-color]'); if (tc) tc.content = isDark() ? '#050505' : '#ffffff';
   const y = window.scrollY;
   const body = ui.tab === 'schedule' ? viewSchedule() : ui.tab === 'grades' ? viewGrades() : ui.tab === 'tasks' ? viewTasks() : viewSettings();
-  $('#app').innerHTML = header() + '<main>' + body + '</main>';
+  $('#app').innerHTML = header() + '<main' + (ui.anim ? ' class="fx"' : '') + '>' + body + footerHTML() + '</main>'; ui.anim = false; syncPins();
   window.scrollTo(0, y);
 }
 
@@ -953,14 +969,95 @@ function openEv(id) {
 function closeSheet() { $('#sheet').classList.remove('open'); sheetEv = null; render(); }
 function setCourse(title, patch) { state.courses[title] = {...courseOf(title), ...patch}; save(); }
 
+/* ===== إضافات: نغمات، تثبيت المهام، شرح الرابط، تصدير، وضع الدكتور، تقييم ===== */
+const _ar = (a, e) => isAr() ? a : e;
+const TONES = {bell:[['جرس','Bell'],[[880,.15],[1320,.35]]],pulse:[['نبضة','Pulse'],[[660,.12],[660,.12],[990,.25]]],chime:[['رنين','Chime'],[[523,.12],[659,.12],[784,.3]]],alert:[['تنبيه','Alert'],[[440,.15],[330,.15],[440,.3]]],soft:[['هادئة','Soft'],[[392,.3],[523,.45]]]};
+const footerHTML = () => '<div class="credit">26161 · mc.college<br>by Al habsi</div>';
+function showSheet(h) { const el = $('#sheet'); el.innerHTML = '<div class="sheet">' + h + '</div>'; el.classList.add('open'); }
+const closeBtn = () => `<button class="icon-btn" data-act="closeSheet">${icon('x')}</button>`;
+async function syncPins(force) {
+  if (!('Notification' in window) || Notification.permission !== 'granted' || !('serviceWorker' in navigator)) return;
+  const reg = await navigator.serviceWorker.getRegistration(); if (!reg) return;
+  const on = S().pinTasks ? state.tasks.filter(k => !k.done && k.due && k.due > Date.now() - 6 * 36e5) : [];
+  const key = on.map(k => k.id + k.due + k.title).join('|');
+  if (!force && key === ui.pinKey) return; ui.pinKey = key;
+  const ids = new Set(on.map(k => 'pin-' + k.id));
+  (await reg.getNotifications()).forEach(n => { if (n.tag && n.tag.startsWith('pin-') && !ids.has(n.tag)) n.close(); });
+  on.forEach(k => reg.showNotification('📌 ' + k.title, { body: fmtDT(k.due) + ' · ' + (k.due > Date.now() ? cd(k.due - Date.now()) : t('overdueLbl')), tag: 'pin-' + k.id, requireInteraction: true, silent: true, lang: S().lang, dir: isAr() ? 'rtl' : 'ltr', icon: 'icons/icon-192.png', badge: 'icons/icon-192.png', data: { pin: true, url: './' } }));
+}
+const toneSel = key => `<select data-change="set" data-key="${key}" style="width:auto">${Object.keys(TONES).map(k => `<option value="${k}" ${S()[key] === k ? 'selected' : ''}>${TONES[k][0][isAr() ? 0 : 1]}</option>`).join('')}</select>`;
+const STEPS = [
+ ['افتح Outlook','سجّل الدخول بحساب الجامعة من outlook.office.com.','Open Outlook','Sign in at outlook.office.com.',['البريد','التقويم','الأشخاص'],1],
+ ['افتح الإعدادات','اضغط أيقونة الترس ⚙ أعلى الصفحة.','Open Settings','Click the ⚙ gear at the top.',['⚙ الإعدادات','الحساب','المظهر'],0],
+ ['اختر التقويم','من الإعدادات اختر التقويم ثم التقويمات المشتركة.','Calendar','Settings → Calendar → Shared calendars.',['عام','التقويم','البريد'],1],
+ ['انشر تقويمك','تحت «نشر تقويم» اختر تقويم الجدول والصلاحية «عرض كل التفاصيل».','Publish','Under “Publish a calendar” pick your calendar and “Can view all details”.',['تقويمات مشتركة','نشر تقويم','استيراد'],1],
+ ['اضغط نشر','اضغط «نشر» وانتظر ظهور الروابط.','Press Publish','Press Publish and wait for the links.',['اختيار التقويم','الصلاحية','نشر'],2],
+ ['انسخ رابط ICS','انسخ الرابط المنتهي بـ ‎.ics (مو رابط HTML) والصقه في خانة الرابط.','Copy the ICS link','Copy the link ending in .ics (not HTML) and paste it in the link box.',['رابط HTML','رابط ICS','إلغاء النشر'],1]];
+function helpHTML() {
+  const i = ui.hs || 0, s = STEPS[i], n = STEPS.length;
+  return `<div class="sheet-head"><h3>${_ar('كيف أحصل على رابط ICS؟', 'How to get the ICS link')}</h3>${closeBtn()}</div>
+  <b>${i + 1} / ${n} — ${_ar(s[0], s[2])}</b><p>${_ar(s[1], s[3])}</p>
+  <div class="mock">${s[4].map((x, j) => `<div class="${j === s[5] ? 'h' : ''}">${x}</div>`).join('')}</div>
+  <div class="row"><button class="btn ghost grow" data-act="hs" data-d="-1" ${i ? '' : 'disabled'}>${_ar('السابق', 'Back')}</button><button class="btn grow" data-act="hs" data-d="1">${i === n - 1 ? _ar('تم', 'Done') : _ar('التالي', 'Next')}</button></div>
+  <p class="hint">${t('howNote')}</p>`;
+}
+const AI_PROMPT = () => _ar('أرفقت لك جدولي الدراسي (PDF أو صورة). حوّله إلى ملف تقويم بصيغة ICS صالح يبدأ بـ BEGIN:VCALENDAR. لكل محاضرة أنشئ VEVENT فيه SUMMARY (اسم المادة) وLOCATION (القاعة) وDTSTART وDTEND بتوقيت Asia/Muscat، وكررها أسبوعياً بـ RRULE:FREQ=WEEKLY;BYDAY=..;COUNT=16 ابتداءً من تاريخ بداية الفصل: ____ . أعطني الناتج كاملاً داخل كتلة كود فقط لأحفظه باسم timetable.ics.', 'I attached my class timetable (PDF or image). Convert it to a valid ICS calendar file starting with BEGIN:VCALENDAR. For each class create a VEVENT with SUMMARY (course), LOCATION (room), DTSTART and DTEND in the Asia/Muscat timezone, repeating weekly with RRULE:FREQ=WEEKLY;BYDAY=..;COUNT=16 from the semester start date: ____ . Return the whole result in a single code block so I can save it as timetable.ics.');
+const aiHTML = () => `<div class="sheet-head"><h3>${_ar('تحويل جدول PDF إلى ICS', 'Convert a PDF timetable to ICS')}</h3>${closeBtn()}</div>
+  <p class="hint">${_ar('انسخ الطلب وأرسله لأي ذكاء اصطناعي مع ملف جدولك، ثم احفظ الناتج باسم timetable.ics وارفعه هنا بزر «ارفع ملف ICS».', 'Copy the prompt, send it with your timetable to any AI, save the result as timetable.ics and upload it here.')}</p>
+  <textarea id="ai-t" rows="8" readonly>${esc(AI_PROMPT())}</textarea><button class="btn" data-act="aiCopy" style="margin-top:.6rem;width:100%">${_ar('نسخ الطلب', 'Copy prompt')}</button>`;
+const aboutHTML = () => `<div class="sheet-head"><h3>${t('appName')}</h3>${closeBtn()}</div>
+  <p>${_ar('الفكرة: جدول الجامعة في Outlook أحياناً يظهر مبعثراً وصعب الوصول. جدولي يقرأ رابط تقويمك ويرتّبه لك على أي جهاز، ويتحدّث تلقائياً وينبّهك بأي تغيير.', 'The idea: your Outlook timetable can be messy and slow to reach. This app reads your calendar link and keeps it tidy on any device, updating automatically and alerting you to changes.')}</p>
+  <p><b>${t('tab_schedule')}:</b> ${_ar('محاضرات اليوم والأسبوع، مع تثبيت وعلامة ولون وتنبيه لكل مادة.', 'Day and week lectures with pin, flag, color and reminder per course.')}<br>
+  <b>${t('tab_grades')}:</b> ${_ar('درجاتك وما تحتاجه للهدف، وحاسبة المعدل.', 'Your grades, what you need for your target, and a GPA calculator.')}<br>
+  <b>${t('tab_tasks')}:</b> ${_ar('تسليمات واختبارات بعدة تنبيهات، وتثبّت في الإشعارات حتى تكملها.', 'Deadlines with several reminders, pinned in notifications until done.')}<br>
+  <b>${t('tab_settings')}:</b> ${_ar('الثيم والنغمات ولون الخلفية والتنبيهات ووضع الدكتور.', 'Theme, tones, background color, alerts and instructor mode.')}</p>
+  <p class="muted">${_ar('صنعه', 'Made by')}: Al habsi · 26161 · mc.college</p>
+  <p style="border-top:1px solid var(--line);padding-top:.7rem">${_ar('شكراً لأنك تستخدمه. كل خطوة صغيرة تنجزها اليوم تقرّبك من التخرج، وأنت قادر على إكمالها. دعمك وآراؤك تحفّزني أطوّره أكثر 💛', 'Thank you for using it. Every small step today brings you closer to graduating, and you can do it. Your support and feedback motivate me to keep improving it 💛')}</p>`;
+const fbHTML = () => `<div class="sheet-head"><h3>${_ar('تقييم واقتراحات', 'Rating & suggestions')}</h3>${closeBtn()}</div>
+  <div class="stars" id="stars">${[1,2,3,4,5].map(i => `<button data-act="star" data-s="${i}">★</button>`).join('')}</div>
+  <textarea id="fb-t" rows="4" placeholder="${_ar('اكتب رأيك أو اقتراحك', 'Your feedback or idea')}" style="margin-top:.6rem"></textarea>
+  <button class="btn" data-act="fbSend" style="margin-top:.6rem;width:100%">${_ar('إرسال', 'Send')}</button>`;
+function manualICS() {
+  const p = n => String(n).padStart(2, '0'), q = x => String(x).replace(/[,;\\]/g, '\\$&'), out = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//jadwali//AR'];
+  (state.manual || []).forEach(m => {
+    const d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() + ((m.dow - d.getDay() + 7) % 7));
+    const z = h => `${d.getFullYear()}${p(d.getMonth() + 1)}${p(d.getDate())}T${h.replace(':', '')}00`;
+    out.push('BEGIN:VEVENT', 'UID:man-' + m.id + '@jadwali', 'SUMMARY:' + q(m.title), 'LOCATION:' + q(m.loc), 'DTSTART:' + z(m.s), 'DTEND:' + z(m.e), `RRULE:FREQ=WEEKLY;BYDAY=${['SU','MO','TU','WE','TH','FR','SA'][m.dow]};COUNT=${m.w}`, 'END:VEVENT');
+  });
+  out.push('END:VCALENDAR'); return out.join('\r\n');
+}
+function extraSettings() {
+  const s = S(), dn = D.wd[isAr() ? 0 : 1], man = state.manual || [];
+  return `<div class="card"><h3>${_ar('الخلفية والأصوات والتثبيت', 'Background, sounds & pinning')}</h3>
+  <label class="f">${_ar('لون أشكال الخلفية', 'Pattern color')}</label><div class="row wrap"><input type="color" value="${s.patColor || (isDark() ? '#f4f4f4' : '#0a0a0a')}" data-change="set" data-key="patColor" style="width:52px;height:38px;padding:2px;flex:none"><button class="btn ghost sm" data-act="patReset">${_ar('افتراضي', 'Default')}</button></div>
+  <p class="hint">${_ar('غيّر لون أزرار الخلفية من لوحة الألوان، أو اضغط افتراضي للرجوع للون الثيم.', 'Pick any color for the background buttons, or press Default.')}</p>
+  <label class="f">${_ar('وضوح الخلفية', 'Pattern strength')}</label><input type="range" min="3" max="30" value="${+s.patOp || 13}" data-change="set" data-key="patOp">
+  <p class="hint">${_ar('حرّك الشريط ليزيد ظهور الأشكال أو يخف.', 'Slide to make the shapes more or less visible.')}</p>
+  <label class="f">${_ar('نغمة المحاضرة', 'Lecture tone')}</label><div class="row wrap">${toneSel('classTone')}<button class="btn ghost sm" data-act="testTone" data-kind="class">${_ar('تجربة', 'Test')}</button></div>
+  <label class="f">${_ar('نغمة المهمة', 'Task tone')}</label><div class="row wrap">${toneSel('taskTone')}<button class="btn ghost sm" data-act="testTone" data-kind="task">${_ar('تجربة', 'Test')}</button></div>
+  <p class="hint">${_ar('نغمة مختلفة لكل نوع تعرّفك بالتنبيه من صوته فقط (تعمل والتطبيق مفتوح).', 'A different tone per type so you can tell them apart (plays while the app is open).')}</p>
+  <label class="f"><input type="checkbox" ${s.pinTasks ? 'checked' : ''} data-change="set" data-key="pinTasks" data-bool="1"> ${_ar('تثبيت المهام في شريط الإشعارات', 'Pin tasks in the notification bar')}</label>
+  <p class="hint">${_ar('تبقى المهمة غير المنتهية ثابتة في الإشعارات حتى تكملها أو تحذفها. أطفئه إذا ما تبغاه.', 'An unfinished task stays pinned until you complete or delete it. Turn off if you do not want it.')}</p></div>
+  <div class="card"><h3>${_ar('تصدير الجدول', 'Export')}</h3><div class="row wrap"><button class="btn ghost" data-act="print">${_ar('حفظ PDF / طباعة', 'Save PDF / print')}</button><button class="btn ghost" data-act="aiDlg">${_ar('PDF إلى ICS بالذكاء الاصطناعي', 'PDF to ICS with AI')}</button></div>
+  <p class="hint">${_ar('اختر «حفظ كـ PDF» من نافذة الطباعة. للصورة خذ لقطة شاشة.', 'Choose “Save as PDF” in the print window. For an image take a screenshot.')}</p></div>
+  <div class="card"><h3>${_ar('وضع الدكتور', 'Instructor mode')}</h3>
+  <label class="f"><input type="checkbox" ${s.doctor ? 'checked' : ''} data-change="set" data-key="doctor" data-bool="1"> ${_ar('تفعيل وضع الدكتور', 'Enable instructor mode')}</label>
+  <p class="hint">${_ar('أضف محاضراتك يدوياً ونزّلها ملف ICS تشاركه مع الطلاب.', 'Add your lectures by hand and download an ICS file to share with students.')}</p>
+  ${s.doctor ? `<input type="text" id="dr-n" placeholder="${_ar('اسم المادة', 'Course')}"><div class="grid2"><select id="dr-d">${[0,1,2,3,4,6,5].map(i => `<option value="${i}">${dn[i]}</option>`).join('')}</select><input type="text" id="dr-l" placeholder="${_ar('القاعة', 'Room')}"></div>
+  <div class="grid2"><input type="time" id="dr-s"><input type="time" id="dr-e"></div><label class="f">${_ar('عدد الأسابيع', 'Weeks')}</label><input type="number" id="dr-w" value="16" min="1" max="52">
+  <div class="row wrap" style="margin-top:.6rem"><button class="btn" data-act="drAdd">${icon('plus', 's')} ${t('add')}</button></div>
+  ${man.map((m, i) => `<div class="stat"><span>${esc(m.title)} · ${dn[m.dow]} ${m.s}–${m.e}</span><button class="icon-btn" style="width:34px;height:34px" data-act="drDel" data-i="${i}">${icon('x', 's')}</button></div>`).join('')}
+  ${man.length ? `<div class="row wrap" style="margin-top:.6rem"><button class="btn" data-act="drIcs">${_ar('تنزيل ICS', 'Download ICS')}</button><button class="btn ghost" data-act="drUse">${_ar('عرضه في جدولي', 'Show in my schedule')}</button></div>` : ''}` : ''}</div>`;
+}
+
 /* =====================  Actions  ===================== */
 const A = {
-  tab: el => { ui.tab = el.dataset.tab; render(); window.scrollTo(0, 0); },
+  tab: el => { ui.tab = el.dataset.tab; ui.anim = true; render(); window.scrollTo(0, 0); },
   view: el => { S().viewMode = el.dataset.v; save(); render(); },
   goToday: () => { ui.day = sod(Date.now()); render(); },
   prev: () => { ui.day = addDays(ui.day, S().viewMode === 'week' ? -7 : -1); render(); },
   nextp: () => { ui.day = addDays(ui.day, S().viewMode === 'week' ? 7 : 1); render(); },
-  pickDay: el => { ui.day = +el.dataset.d; render(); },
+  pickDay: el => { ui.day = +el.dataset.d; ui.anim = true; render(); },
   openEv: el => openEv(el.dataset.id),
   closeSheet: () => closeSheet(),
   pinCourse: el => { const c = courseOf(el.dataset.title); setCourse(el.dataset.title, {pinned: !c.pinned}); openEv(sheetEv); },
@@ -1021,7 +1118,7 @@ const A = {
   addTask: () => {
     const title = $('#tk-title').value.trim(); if (!title) return;
     const due = $('#tk-due').value ? new Date($('#tk-due').value).getTime() : null;
-    state.tasks.push({id:uid(), title, due, course:$('#tk-course').value.trim(), done:false});
+    state.tasks.push({id:uid(), title, due, course:$('#tk-course').value.trim(), done:false, rem:[...document.querySelectorAll('#tk-rems input:checked')].map(x => +x.value)});
     save(); render();
   },
   delTask: el => { state.tasks = state.tasks.filter(x => x.id !== el.dataset.id); save(); render(); },
@@ -1033,6 +1130,33 @@ const A = {
   },
   resetAll: () => { if (confirm(t('confirmReset'))) { localStorage.removeItem(KEY); state = DEFAULTS(); EV = []; EVMAP = {}; render(); } }
 };
+Object.assign(A, {
+  about: () => showSheet(aboutHTML()),
+  feedback: () => { ui.stars = 0; showSheet(fbHTML()); },
+  help: () => { ui.hs = 0; showSheet(helpHTML()); },
+  hs: el => { const i = (ui.hs || 0) + +el.dataset.d; if (i >= STEPS.length) return closeSheet(); ui.hs = Math.max(0, i); showSheet(helpHTML()); },
+  aiDlg: () => showSheet(aiHTML()),
+  aiCopy: () => { navigator.clipboard.writeText(AI_PROMPT()).then(() => toast(_ar('تم النسخ', 'Copied'))); },
+  star: el => { ui.stars = +el.dataset.s; document.querySelectorAll('#stars button').forEach((b, i) => b.classList.toggle('on', i < ui.stars)); },
+  fbSend: async () => {
+    const body = { stars: ui.stars || 0, text: ($('#fb-t').value || '').trim(), lang: S().lang };
+    if (!body.stars && !body.text) return;
+    try { await fetch('/api/feedback', { method: 'POST', headers: JSONH, body: JSON.stringify(body) }); } catch (e) {}
+    closeSheet(); toast(_ar('شكراً لك، رأيك يصنع فرقاً 💛', 'Thank you, your feedback matters 💛'));
+  },
+  print: () => { S().viewMode = 'week'; ui.tab = 'schedule'; save(); render(); setTimeout(() => window.print(), 300); },
+  patReset: () => { S().patColor = ''; S().patOp = 0; save(); render(); },
+  testTone: el => beep(el.dataset.kind),
+  drAdd: () => {
+    const m = { id: uid(), title: $('#dr-n').value.trim(), loc: $('#dr-l').value.trim(), dow: +$('#dr-d').value, s: $('#dr-s').value, e: $('#dr-e').value, w: Math.min(52, Math.max(1, +$('#dr-w').value || 16)) };
+    if (!m.title || !m.s || !m.e) return toast(_ar('أكمل اسم المادة والوقت', 'Fill course and times'));
+    (state.manual = state.manual || []).push(m); save(); render();
+  },
+  drDel: el => { state.manual.splice(+el.dataset.i, 1); save(); render(); },
+  drIcs: () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([manualICS()], { type: 'text/calendar' })); a.download = 'timetable.ics'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); },
+  drUse: () => { state.icsText = manualICS(); state.demo = false; S().icsUrl = ''; ui.syncError = ''; loadEvents(); state.snapshot = makeSnapshot(); state.lastSync = Date.now(); save(); ui.tab = 'schedule'; render(); }
+});
+
 const C = {
   set: el => {
     const k = el.dataset.key; S()[k] = el.dataset.bool ? el.checked : el.value.trim();
@@ -1095,6 +1219,7 @@ function schedule() {
 setInterval(() => {
   const b = $('#banner'); if (b && ui.tab === 'schedule') b.innerHTML = bannerHTML();
   checkReminders();
+  if (Date.now() - (ui.pinT || 0) > 3e5) { ui.pinT = Date.now(); syncPins(true); }
 }, 20000);
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState !== 'visible') return;
